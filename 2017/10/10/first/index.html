@@ -79,12 +79,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Weex2016年4月21日，阿里巴巴在Qcon大会上宣布跨平台移动开发工具Weex开放内测邀请。Weex是一套简单易用的跨平台开发方案，能以 web 的开发体验构建高性能、可扩展的 native 应用，为了做到这些，Weex 与 Vue合作，使用 Vue 作为上层框架，并遵循 W3C 标准实现了统一的 JSEngine 和 DOM API，这样一来，你甚至可以使用其他框架驱动Weex，打造三端一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue移动端框架比较">
+<meta property="og:url" content="http://yoursite.com/2017/10/10/first/index.html">
 <meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="Weex2016年4月21日，阿里巴巴在Qcon大会上宣布跨平台移动开发工具Weex开放内测邀请。Weex是一套简单易用的跨平台开发方案，能以 web 的开发体验构建高性能、可扩展的 native 应用，为了做到这些，Weex 与 Vue合作，使用 Vue 作为上层框架，并遵循 W3C 标准实现了统一的 JSEngine 和 DOM API，这样一来，你甚至可以使用其他框架驱动Weex，打造三端一">
+<meta property="og:updated_time" content="2017-10-10T04:40:29.632Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的博客">
+<meta name="twitter:title" content="vue移动端框架比较">
+<meta name="twitter:description" content="Weex2016年4月21日，阿里巴巴在Qcon大会上宣布跨平台移动开发工具Weex开放内测邀请。Weex是一套简单易用的跨平台开发方案，能以 web 的开发体验构建高性能、可扩展的 native 应用，为了做到这些，Weex 与 Vue合作，使用 Vue 作为上层框架，并遵循 W3C 标准实现了统一的 JSEngine 和 DOM API，这样一来，你甚至可以使用其他框架驱动Weex，打造三端一">
 
 
 
@@ -114,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/10/first/"/>
 
 
 
 
 
-  <title>我的博客</title>
+  <title>vue移动端框架比较 | 我的博客</title>
   
 
 
@@ -139,8 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -213,151 +216,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/vuex/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micity">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/10/vuex/" itemprop="url">一篇看懂vuejs的状态管理神器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-10T12:52:04+08:00">
-                2017-10-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>关于vuex类的新闻最近很多，看到眼热就去查了下资料，然后扯出来一堆flux、redux、state、state之类的概念，以及大型工程必要性之类的。看官方手册也是昏昏然。<br>然而，我还是弄懂了!我准备从demo出发，以同样的一个最简单的demo，演示两种情况下的代码编写情况：</p>
-<ol>
-<li>单纯依赖于vue.js</li>
-<li>依赖vue.js，也使用了vuex技术<br>目的是通过对比引出vuex的概念、优势和劣势。也许这是目前最接地气的vuex的介绍吧：）。所以无论如何在了解vuex之前，你必须懂得vue.js(好像废话：）。现在开始。<br>假设一个微小的应用，有一个标签显示数字，两个按钮分别做数字的加一和减一的操作。用户界面看起来是这样的：</li>
-</ol>
-<p>使用vue的话，就是这样：</p>
-<p><script src="https://unpkg.com/vue/dist/vue.js"></script></p>
-<p><div id="app"><br>  <p><br>    <button @click="inc">+</button><br>    <button @click="dec">-</button><br>  </p><br></div></p>
-<p><script><br>new Vue({<br>  el:’#app’,<br>  data () {<br>    return {<br>      count: 0<br>    }<br>  },<br>  methods: {<br>    inc () {<br>      this.count++<br>    },<br>    dec () {<br>      this.count–<br>    }<br>  }<br>})<br></script><br>我写的代码代码可以直接拷贝到你的html内并且打开执行，你可以不费多余的劲儿，就把应用跑起来，按按按钮，看看界面上的反应是否如你预期。<br>整个代码结构非常清晰，代码是代码，数据是数据，这也是我一直以来非常喜欢vue.js的重要原因。代码就是放在methods数组内的两个函数inc、dec，被指令@click关联到button上。而data内返回一个属性count，此属性通过绑定到标签p内。<br>现在来看看，同样的demo app，使用vuex完成的代码的样子，再一次，如下代码不是代码片段，是可以贴入到你的html文件内，并且直接使用浏览器打开运行的。</p>
-<p><script src="https://unpkg.com/vue/dist/vue.js"></script></p>
-<p><script src="https://unpkg.com/vuex@next"></script></p>
-<p><div id="app"><br>  <p><br>    <button @click="inc">+</button><br>    <button @click="dec">-</button><br>  </p><br></div></p>
-<script>
-
-<p>const store = new Vuex.Store({<br>  state: {<br>    count: 0<br>  },<br>  mutations: {<br>      inc: state =&gt; state.count++,<br>    dec: state =&gt; state.count–<br>  }<br>})</p>
-<p>const app = new Vue({<br>  el: ‘#app’,<br>  computed: {<br>    count () {<br>        return store.state.count<br>    }<br>  },<br>  methods: {<br>    inc () {<br>      store.commit(‘inc’)<br>    },<br>    dec () {<br>        store.commit(‘dec’)<br>    }<br>  }<br>})<br></script><br>我们先看到有哪些重要的变化：<p></p>
-<ol>
-<li>新的代码添加了对vuex@next脚本的依赖。这是当然的，因为你需要使用vuex的技术，当然需要引用它</li>
-<li>methods数组还是这两个方法，这和demo1是一样的；但是方法内的计算逻辑，不再是在函数内进行，而是提交给store对象！这是一个新的对象！</li>
-<li>count数据也不再是一个data函数返回的对象的属性；而是通过计算字段来返回，并且在计算字段内的代码也不是自己算的，而是转发给store对象。再一次store对象！<br>就是说，之前在vue实例内做的操作和数据的计算现在都不再自己做了，而是交由对象store来做了。这突然让我想到就先餐厅现在都不在洗碗了，都交给政府认证的机构来洗了。<br>说回正题。store对象是Vuex.Store的实例。在store内有分为state对象和mutations对象，其中的state放置状态,mutations则是一个会引发状态改变的所有方法。正如我们看到的，目前的state对象，其中的状态就只有一个count。而mutations有两个成员，它们参数为state，在函数体内对state内的count成员做加1和减1的操作。<br>活还是那些活，现在引入了一个store对象，把数据更新的活给揽过去，不再需要vue实例自己计算了，代价是引入了新的概念和层次。那么好处是什么（一个土耳其古老的发问）？<br>vuex解决了组件之间共享同一状态的麻烦问题。当我们的应用遇到多个组件共享状态时，会需要：</li>
-<li>多个组件依赖于同一状态。传参的方法对于多层嵌套的组件将会非常繁琐，并且对于兄弟组件间的状态传递无能为力。这需要你去学习下，vue编码中多个组件之间的通讯的做法。</li>
-<li>来自不同组件的行为需要变更同一状态。我们经常会采用父子组件直接引用或者通过事件来变更和同步状态的多份拷贝。<br>以上的这些模式非常脆弱，通常会导致无法维护的代码。来自官网的一句话：Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态。这里的关键在于集中式存储管理。这意味着本来需要共享状态的更新是需要组件之间通讯的，而现在有了vuex，就组件就都和store通讯了。问题就自然解决了。<br>这就是为什么官网再次会提到Vuex构建大型应用的价值。如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。确实是如此——如果您的应用够简单，您最好不要使用 Vuex。</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -387,9 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/10/first/" itemprop="url">vue移动端框架比较</a></h1>
+          <h1 class="post-title" itemprop="name headline">vue移动端框架比较</h1>
         
 
         <div class="post-meta">
@@ -439,9 +298,7 @@
       
 
       
-        
-          
-            <h2 id="Weex"><a href="#Weex" class="headerlink" title="Weex"></a>Weex</h2><p>2016年4月21日，阿里巴巴在Qcon大会上宣布跨平台移动开发工具Weex开放内测邀请。<br>Weex<br>是一套简单易用的跨平台开发方案，能以 web 的开发体验构建高性能、可扩展的 native 应用，为了做到这些，Weex 与 Vue<br>合作，使用 Vue 作为上层框架，并遵循 W3C 标准实现了统一的 JSEngine 和 DOM API，这样一来，你甚至可以使用其他框架驱动<br>Weex，打造三端一致的 native 应用。<br>Weex能够完美兼顾性能与动态性，支持iOS、安卓、YunOS及Web等多端部署。<br>其工作原理<br>Weex<br>表面上是一个客户端技术，但实际上它串联起了从本地开发环境到云端部署和分发的整个链路。开发者首先可以在本地像撰写 web 页面一样撰写一个<br>app 的页面，然后编译成一段 JavaScript 代码，形成 Weex 的一个 JS bundle；在云端，开发者可以把生成的 JS<br>bundle 部署上去，然后通过网络请求或预下发的方式传递到用户的移动应用客户端；在移动应用客户端里，WeexSDK 会准备好一个<br>JavaScript 引擎，并且在用户打开一个 Weex 页面时执行相应的 JS bundle，并在执行过程中产生各种命令发送到 native<br>端进行的界面渲染或数据存储、网络通信、调用设备功能、用户交互响应等移动应用的场景实践；同时，如果用户没有安装移动应用，他仍然可以在浏览器里打开一个相同的<br>web 页面，这个页面是使用相同的页面源代码，通过浏览器里的 JavaScript 引擎运行起来的。</p>
+        <h2 id="Weex"><a href="#Weex" class="headerlink" title="Weex"></a>Weex</h2><p>2016年4月21日，阿里巴巴在Qcon大会上宣布跨平台移动开发工具Weex开放内测邀请。<br>Weex<br>是一套简单易用的跨平台开发方案，能以 web 的开发体验构建高性能、可扩展的 native 应用，为了做到这些，Weex 与 Vue<br>合作，使用 Vue 作为上层框架，并遵循 W3C 标准实现了统一的 JSEngine 和 DOM API，这样一来，你甚至可以使用其他框架驱动<br>Weex，打造三端一致的 native 应用。<br>Weex能够完美兼顾性能与动态性，支持iOS、安卓、YunOS及Web等多端部署。<br>其工作原理<br>Weex<br>表面上是一个客户端技术，但实际上它串联起了从本地开发环境到云端部署和分发的整个链路。开发者首先可以在本地像撰写 web 页面一样撰写一个<br>app 的页面，然后编译成一段 JavaScript 代码，形成 Weex 的一个 JS bundle；在云端，开发者可以把生成的 JS<br>bundle 部署上去，然后通过网络请求或预下发的方式传递到用户的移动应用客户端；在移动应用客户端里，WeexSDK 会准备好一个<br>JavaScript 引擎，并且在用户打开一个 Weex 页面时执行相应的 JS bundle，并在执行过程中产生各种命令发送到 native<br>端进行的界面渲染或数据存储、网络通信、调用设备功能、用户交互响应等移动应用的场景实践；同时，如果用户没有安装移动应用，他仍然可以在浏览器里打开一个相同的<br>web 页面，这个页面是使用相同的页面源代码，通过浏览器里的 JavaScript 引擎运行起来的。</p>
 <h2 id="Mint-UI"><a href="#Mint-UI" class="headerlink" title="Mint UI"></a>Mint UI</h2><p>基于 Vue.js 的移动端组件库<br>Mint UI 包含丰富的 CSS 和 JS 组件，能够满足日常的移动端开发需要。通过它，可以快速构建出风格统一的页面，提升开发效率。<br>真正意义上的按需加载组件。可以只加载声明过的组件及其样式文件，无需再纠结文件体积过大。<br>考虑到移动端的性能门槛，Mint UI 采用 CSS3 处理各种动效，避免浏览器进行不必要的重绘和重排，从而使用户获得流畅顺滑的体验。<br>依托 Vue.js 高效的组件化方案，Mint UI 做到了轻量化。即使全部引入，压缩后的文件体积也仅有 ~30kb (JS + CSS) gzip。</p>
 <h2 id="vue-carbon"><a href="#vue-carbon" class="headerlink" title="vue-carbon"></a>vue-carbon</h2><p>基于 vuejs 1.0 开发 material design 风格的移动端 WEB UI 库<br>使用文档地址 <a href="https://myronliu347.github.io/vue-carbon/book/v0.5.0/index.html" target="_blank" rel="external">https://myronliu347.github.io/vue-carbon/book/v0.5.0/index.html</a></p>
 <h2 id="Muse-UI"><a href="#Muse-UI" class="headerlink" title="Muse-UI"></a>Muse-UI</h2><p>基于 Vue 2.0 和 Material Desigin 的 UI 组件库<br>特性<br>1.组件丰富<br>Muse UI 基本实现了 Material Design 设计规范类的所有组件，另外还开发许多的功能性的组件<br>2.可定制<br>Muse UI 使用less文件，所有的颜色都有一个变量维护，通过编写 less 文件完成自定义主题，另外组件内部也提供一些修改效果的参数<br>3.基于 Vue 2.0<br>Muse UI 基于 Vue2.0 开发，Vue2.0是当下最快的前端框架之一，小巧，api友好，可用于开发的复杂单页应用</p>
@@ -449,8 +306,6 @@
 <h2 id="vonic"><a href="#vonic" class="headerlink" title="vonic"></a>vonic</h2><p>一个基于 vue.js 和 ionic 样式的 UI 框架，用于快速构建移动端单页应用。<br>和 ionic 的关系：没有关系，只是在样式方面以 ionic 的 css 文件为基础（做了一些调整）</p>
 <h2 id="vux"><a href="#vux" class="headerlink" title="vux"></a>vux</h2><p>Vux（读音 [v’ju:z]，同views）是基于WeUI和Vue(2.x)开发的移动端UI组件库，主要服务于微信页面。<br>基于webpack+vue-loader+vux可以快速开发移动端页面，配合vux-loader方便你在WeUI的基础上定制需要的样式。<br>vux-loader保证了组件按需使用，因此不用担心最终打包了整个vux的组件库代码。<br>vux并不完全依赖于WeUI，但是尽量保持整体UI样式接近WeUI的设计规范。最初目标是创建一个易用，实用，美观的移动端UI组件库，现在离理想状态还有不少距离，因此需要大家及时反馈问题及贡献代码。<br>即使你不使用vux的代码, 但能从源码得到一些参考那么也是件让人高兴的事情。</p>
 
-          
-        
       
     </div>
     
@@ -467,12 +322,28 @@
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/10/vuex/" rel="prev" title="一篇看懂vuejs的状态管理神器">
+                一篇看懂vuejs的状态管理神器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -482,10 +353,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -493,6 +365,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -513,8 +389,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -558,6 +443,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Weex"><span class="nav-number">1.</span> <span class="nav-text">Weex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mint-UI"><span class="nav-number">2.</span> <span class="nav-text">Mint UI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-carbon"><span class="nav-number">3.</span> <span class="nav-text">vue-carbon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Muse-UI"><span class="nav-number">4.</span> <span class="nav-text">Muse-UI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VUWE"><span class="nav-number">5.</span> <span class="nav-text">VUWE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vonic"><span class="nav-number">6.</span> <span class="nav-text">vonic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vux"><span class="nav-number">7.</span> <span class="nav-text">vux</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -679,6 +580,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
