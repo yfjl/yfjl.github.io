@@ -85,7 +85,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/23/的新特性/index.html">
 <meta property="og:site_name" content="Micity&#39;s Notes">
 <meta property="og:description" content="可识别空和未定义类型TypeScript 有两个特殊的类型，null 和 undefined，null 和 undefined 分别是它们的值。以前是不能显式使用这些类型的，但现在 null 和 undefined 不管在什么类型检查模式下都可以用作类型名称。 以前的类型检查器认为 null 和 undefined 可以赋值给任意变量。实际上，null 和 undefined 对每一个类型都是有效">
-<meta property="og:updated_time" content="2017-10-23T01:52:35.688Z">
+<meta property="og:updated_time" content="2017-10-23T01:54:33.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;转&gt;typescript 2.0 的新特性">
 <meta name="twitter:description" content="可识别空和未定义类型TypeScript 有两个特殊的类型，null 和 undefined，null 和 undefined 分别是它们的值。以前是不能显式使用这些类型的，但现在 null 和 undefined 不管在什么类型检查模式下都可以用作类型名称。 以前的类型检查器认为 null 和 undefined 可以赋值给任意变量。实际上，null 和 undefined 对每一个类型都是有效">
@@ -382,6 +382,7 @@
 <p>以前的类型检查器认为 null 和 undefined 可以赋值给任意变量。实际上，null 和 undefined 对每一个类型都是有效的值，任何类型都不可能明确定义不包含它们（因此不可能检查到对它们的错误使用）。</p>
 <p>–strictNullChecks<br>–strictNullChecks 参数用于新的严格空检查模式。</p>
 <p>在严格空检查模式下， null 和 undefined 值都 不 属于任何一个类型，它们只能赋值给自己这种类型或者 any (有一个例外，undefined 也可以赋值给 void)。因此，在常规类型检查模式下 T 和 T | ndefined 被认为是等同的（因为 undefined 被看作 T 的子类型），但它们在严格类型检查模式下是不同的类型，只有 T | undefined 类型允许出现 undefined 值。T 和 T | null 也是这种情况。</p>
+<a id="more"></a>
 <p>示例</p>
 <p>// 使用 –strictNullChecks 参数编译<br>let x: number;<br>let y: number | undefined;<br>let z: number | null | undefined;<br>x = 1;  // 正确<br>y = 1;  // 正确<br>z = 1;  // 正确<br>x = undefined;  // 错误<br>y = undefined;  // 正确<br>z = undefined;  // 正确<br>x = null;  // 错误<br>y = null;  // 错误<br>z = null;  // 正确<br>x = y;  // 错误<br>x = z;  // 错误<br>y = x;  // 正确<br>y = z;  // 错误<br>z = x;  // 正确<br>z = y;  // 正确<br>使用前赋值 检查<br>在严格空检查模式下，编译器要求在任意可能先进到的代码路径前，不允许 undefined 值的变量引用都必须已经赋值。</p>
 <p>示例</p>
