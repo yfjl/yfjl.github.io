@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="由于 npm官方站总是抽风, 安装时下载速度很慢甚至连接不上, 怎么办呢?我们可以切换到npm的镜像站点, 方法有二">
+<meta name="description" content="Git基本语法语法            功能说明git clone    克隆版本库git pull    拉回远程版本库的提交git push    推送至远程版本库git add        添加至暂存区git add–interactive    交互式添加git apply    应用补丁git am        应用邮件格式补丁git annotate    同义词，等同于 git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="npm镜像站">
-<meta property="og:url" content="http://yoursite.com/2017/10/10/npm/index.html">
+<meta property="og:title" content="Git基本语法">
+<meta property="og:url" content="http://yoursite.com/2017/10/23/Git基本语法/index.html">
 <meta property="og:site_name" content="Micity&#39;s Notes">
-<meta property="og:description" content="由于 npm官方站总是抽风, 安装时下载速度很慢甚至连接不上, 怎么办呢?我们可以切换到npm的镜像站点, 方法有二">
-<meta property="og:updated_time" content="2017-10-10T08:16:56.438Z">
+<meta property="og:description" content="Git基本语法语法            功能说明git clone    克隆版本库git pull    拉回远程版本库的提交git push    推送至远程版本库git add        添加至暂存区git add–interactive    交互式添加git apply    应用补丁git am        应用邮件格式补丁git annotate    同义词，等同于 git">
+<meta property="og:updated_time" content="2017-10-23T06:57:19.242Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="npm镜像站">
-<meta name="twitter:description" content="由于 npm官方站总是抽风, 安装时下载速度很慢甚至连接不上, 怎么办呢?我们可以切换到npm的镜像站点, 方法有二">
+<meta name="twitter:title" content="Git基本语法">
+<meta name="twitter:description" content="Git基本语法语法            功能说明git clone    克隆版本库git pull    拉回远程版本库的提交git push    推送至远程版本库git add        添加至暂存区git add–interactive    交互式添加git apply    应用补丁git am        应用邮件格式补丁git annotate    同义词，等同于 git">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/10/npm/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/23/Git基本语法/"/>
 
 
 
 
 
-  <title>npm镜像站 | Micity's Notes</title>
+  <title>Git基本语法 | Micity's Notes</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/npm/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/23/Git基本语法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micity">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">npm镜像站</h1>
+          <h1 class="post-title" itemprop="name headline">Git基本语法</h1>
         
 
         <div class="post-meta">
@@ -318,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T16:11:27+08:00">
-                2017-10-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-23T13:30:38+08:00">
+                2017-10-23
               </time>
             
 
@@ -337,9 +337,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/10/npm/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/23/Git基本语法/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/10/npm/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/23/Git基本语法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -347,7 +347,7 @@
 
           
           
-             <span id="/2017/10/10/npm/" class="leancloud_visitors" data-flag-title="npm镜像站">
+             <span id="/2017/10/23/Git基本语法/" class="leancloud_visitors" data-flag-title="Git基本语法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -378,13 +378,22 @@
       
 
       
-        <p>由于 npm官方站总是抽风, 安装时下载速度很慢甚至连接不上, 怎么办呢?<br>我们可以切换到npm的镜像站点, 方法有二<br><a id="more"></a></p>
-<blockquote><p>1.npm install 时临时指定镜像源:<br>$ npm install –registry <a href="http://registry.cnpmjs.org" target="_blank" rel="external">http://registry.cnpmjs.org</a> express #从中国镜像安装express </p>
-<p>2.永久设置:<br>$ npm config set registry <a href="http://registry.cnpmjs.org" target="_blank" rel="external">http://registry.cnpmjs.org</a>  #设置为中国镜像<br>然后照常使用<br>npm install express 即可 </p>
-<p>目前已知的npm 镜像源站点:<br>中国镜像站: <a href="http://registry.cnpmjs.org" target="_blank" rel="external">http://registry.cnpmjs.org</a><br>官方站: <a href="http://registry.npmjs.org" target="_blank" rel="external">http://registry.npmjs.org</a><br>各国镜像:<br><a href="https://registry.nodejitsu.com" target="_blank" rel="external">https://registry.nodejitsu.com</a>  美国<br><a href="https://npm.strongloop.com" target="_blank" rel="external">https://npm.strongloop.com</a> 美国<br><a href="http://registry.npmjs.org.au" target="_blank" rel="external">http://registry.npmjs.org.au</a> 澳大利亚<br><a href="http://registry.npmjs.eu" target="_blank" rel="external">http://registry.npmjs.eu</a> 德国 </p>
-<p>一大堆镜像站介绍: <a href="http://blog.modulus.io/npm-mirrors" target="_blank" rel="external">http://blog.modulus.io/npm-mirrors</a></p>
-<p>npm 上传包时，需要我们设置回官方镜像地址，否则会报错<br>npm config set registry <a href="http://registry.npmjs.org" target="_blank" rel="external">http://registry.npmjs.org</a></p>
-</blockquote>
+        <h2 id="Git基本语法"><a href="#Git基本语法" class="headerlink" title="Git基本语法"></a>Git基本语法</h2><p>语法            功能说明<br>git clone    克隆版本库<br>git pull    拉回远程版本库的提交<br>git push    推送至远程版本库<br>git add        添加至暂存区<br>git add–interactive    交互式添加<br>git apply    应用补丁<br>git am        应用邮件格式补丁<br>git annotate    同义词，等同于 git blame<br>git archive        文件归档打包<br>git bisect        二分查找<br>git blame        文件逐行追溯<br>git branch        分支管理<br>git cat-file    版本库对象研究工具<br>git checkout    检出到工作区、切换或创建分支<br>git cherry-pick    提交拣选<br>git citool        图形化提交，相当于 git gui 命令<br>git clean        清除工作区未跟踪文件<br>git commit        提交<br>git config        查询和修改配置<br>git describe    通过里程碑直观地显示提交ID<br>git diff        差异比较<br>git difftool    调用图形化差异比较工具<br>git fetch        获取远程版本库的提交<br>git format-patch    创建邮件格式的补丁文件。参见 git am 命令<br>git grep        文件内容搜索定位工具<br>git gui            基于Tcl/Tk的图形化工具，侧重提交等操作<br>git help        帮助<br>git init        版本库初始化<br>git init-db        同义词，等同于 git init<br>git log            显示提交日志<br>git merge        分支合并<br>git mergetool    图形化冲突解决<br>git mv            重命名<br>git rebase        分支变基<br>git rebase–interactive    交互式分支变基<br>git reflog                分支等引用变更记录管理<br>git remote                远程版本库管理<br>git repo-config        同义词，等同于 git config<br>git reset            重置改变分支“游标”指向<br>git rev-parse        将各种引用表示法转换为哈希值等<br>git revert            反转提交<br>git rm                删除文件<br>git show    显示各种类型的对象<br>git stage    同义词，等同于 git add<br>git stash    保存和恢复进度<br>git status    显示工作区文件状态<br>git tag        里程碑管理<br><a id="more"></a></p>
+<h2 id="使用git将项目上传到github"><a href="#使用git将项目上传到github" class="headerlink" title="使用git将项目上传到github"></a>使用git将项目上传到github</h2><p>首先有一个<a href="https://github.com/" target="_blank" rel="external">github</a>账号，没有赶紧去注册</p>
+<p>我们使用<a href="https://git-for-windows.github.io/" target="_blank" rel="external">git</a>，需要先安装<a href="https://git-for-windows.github.io/" target="_blank" rel="external">git</a>工具</p>
+<p>项目名以test为例：<br>然后新建一个项目New repository<br>复制项目地址，使用Git Bash Here  。<br>git clone  项目地址。<br>进入项目：<br>cd test<br>.接下来依次输入以下代码即可完成其他剩余操作：</p>
+<p>git add .        （注：别忘记后面的.，此操作是把Test文件夹下面的文件都添加进来）    &lt;添加至暂存区&gt;</p>
+<p>git commit  -m  “提交信息”  （注：“提交信息”里面换成你需要，如“first commit”）     &lt;提交&gt;</p>
+<p>git push -u origin master   （注：此操作目的是把本地仓库push到github上面，此步骤需要你输入帐号和密码）  &lt;推送至远程版本库&gt;</p>
+<p>就可以提交成功。</p>
+<h2 id="使用git-pull文件时和本地文件冲突怎么办？"><a href="#使用git-pull文件时和本地文件冲突怎么办？" class="headerlink" title="使用git pull文件时和本地文件冲突怎么办？"></a>使用git pull文件时和本地文件冲突怎么办？</h2><p>1、先将本地修改存储起来<br>$ git stash<br>这样本地的所有修改就都被暂时存储起来 。是用git stash list可以看到保存的信息<br>stash@{0}: WIP on master: 34fdb58 修改<br>stash@{0}就是刚才保存的标记</p>
+<p>2、pull内容<br>暂存了本地修改之后，就可以pull了。<br>$ git pull</p>
+<p>3、还原暂存的内容<br>$ git stash pop stash@{0}<br>系统提示如下类似的信息：<br>Auto-merging c/environ.c<br>CONFLICT (content): Merge conflict in c/environ.c<br>意思就是系统自动合并修改的内容，但是其中有冲突，需要解决其中的冲突。</p>
+<p>4、解决文件中冲突的的部分</p>
+<p>打开冲突的文件，会看到类似如下的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream</div><div class="line">	&lt;title&gt;我是首页风格的风格&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div&gt;我是测试梵蒂冈电饭锅代码&lt;/div&gt;</div><div class="line">=======</div><div class="line">	&lt;title&gt;我是首页111111111111&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div&gt;我是测试代码1222222222222222&lt;/div&gt;</div><div class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div></pre></td></tr></table></figure>
+<p>其中Updated upstream 和=====之间的内容就是pull下来的内容，====和stashed changes之间的内容就是本地修改的内容。碰到这种情况，git也不知道哪行内容是需要的，所以要自行确定需要的内容。<br>解决完成之后。<br>使用 git add .  git commit -m “备注”  git push -u origin master  即可。</p>
+
       
     </div>
     
@@ -449,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/10/vuex/" rel="next" title="一篇看懂vuejs的状态管理神器">
-                <i class="fa fa-chevron-left"></i> 一篇看懂vuejs的状态管理神器
+              <a href="/2017/10/23/typescript基本类型总结/" rel="next" title="typescript基本类型总结">
+                <i class="fa fa-chevron-left"></i> typescript基本类型总结
               </a>
             
           </div>
@@ -458,10 +467,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/10/exports/" rel="prev" title="module.exports 与 exports 的区别解释">
-                module.exports 与 exports 的区别解释 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -523,8 +528,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -608,6 +622,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git基本语法"><span class="nav-number">1.</span> <span class="nav-text">Git基本语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用git将项目上传到github"><span class="nav-number">2.</span> <span class="nav-text">使用git将项目上传到github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用git-pull文件时和本地文件冲突怎么办？"><span class="nav-number">3.</span> <span class="nav-text">使用git pull文件时和本地文件冲突怎么办？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -765,9 +795,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/10/10/npm/';
-          this.page.identifier = '2017/10/10/npm/';
-          this.page.title = 'npm镜像站';
+          this.page.url = 'http://yoursite.com/2017/10/23/Git基本语法/';
+          this.page.identifier = '2017/10/23/Git基本语法/';
+          this.page.title = 'Git基本语法';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
