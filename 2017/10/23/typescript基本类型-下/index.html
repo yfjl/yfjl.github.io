@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="本想每天坚持写ts笔记，可惜工作繁忙。幸运的是，最近做了一个小程序项目，虽然工作好几年，但还是真的是第一次做小程序。感谢组长。微信小程序的难度一般，没有太多需要记录的。官网是最好的教程，微信小程序。接着">
+<meta name="description" content="本想每天坚持写ts笔记，可惜工作繁忙。幸运的是，最近做了一个小程序项目，虽然工作好几年，但还是真的是第一次做小程序。感谢组长。微信小程序的难度一般，没有太多需要记录的。官网是最好的教程，微信小程序。接着上篇typescript基本类型[上]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="typescript基本类型[下]">
 <meta property="og:url" content="http://yoursite.com/2017/10/23/typescript基本类型-下/index.html">
 <meta property="og:site_name" content="Micity&#39;s Notes">
-<meta property="og:description" content="本想每天坚持写ts笔记，可惜工作繁忙。幸运的是，最近做了一个小程序项目，虽然工作好几年，但还是真的是第一次做小程序。感谢组长。微信小程序的难度一般，没有太多需要记录的。官网是最好的教程，微信小程序。接着">
-<meta property="og:updated_time" content="2017-10-23T01:09:24.754Z">
+<meta property="og:description" content="本想每天坚持写ts笔记，可惜工作繁忙。幸运的是，最近做了一个小程序项目，虽然工作好几年，但还是真的是第一次做小程序。感谢组长。微信小程序的难度一般，没有太多需要记录的。官网是最好的教程，微信小程序。接着上篇typescript基本类型[上]">
+<meta property="og:updated_time" content="2017-10-23T01:37:26.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="typescript基本类型[下]">
-<meta name="twitter:description" content="本想每天坚持写ts笔记，可惜工作繁忙。幸运的是，最近做了一个小程序项目，虽然工作好几年，但还是真的是第一次做小程序。感谢组长。微信小程序的难度一般，没有太多需要记录的。官网是最好的教程，微信小程序。接着">
+<meta name="twitter:description" content="本想每天坚持写ts笔记，可惜工作繁忙。幸运的是，最近做了一个小程序项目，虽然工作好几年，但还是真的是第一次做小程序。感谢组长。微信小程序的难度一般，没有太多需要记录的。官网是最好的教程，微信小程序。接着上篇typescript基本类型[上]">
 
 
 
@@ -378,7 +378,24 @@
       
 
       
-        <p>本想每天坚持写ts笔记，可惜工作繁忙。幸运的是，最近做了一个小程序项目，虽然工作好几年，但还是真的是第一次做小程序。感谢组长。<br>微信小程序的难度一般，没有太多需要记录的。官网是最好的教程，<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/" target="_blank" rel="external">微信小程序</a><br>。<br>接着<br><a id="more"></a></p>
+        <p>本想每天坚持写ts笔记，可惜工作繁忙。幸运的是，最近做了一个小程序项目，虽然工作好几年，但还是真的是第一次做小程序。感谢组长。<br>微信小程序的难度一般，没有太多需要记录的。官网是最好的教程，<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/" target="_blank" rel="external">微信小程序</a><br>。<br>接着上篇<a href="http://vip-yangfeng.top/2017/10/13/typescript%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E4%B8%8A/" target="_blank" rel="external">typescript基本类型[上]</a><br><a id="more"></a></p>
+<p>1、void(空值)</p>
+<p>1.1 void类型的函数<br>    某种程度上来说，void类型像是与any类型相反，它表示没有任何类型。 当一个函数没有返回值时，你通常会见到其返回值类型是 void：<br>    有返回值的函数：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">ts:</div><div class="line">function myAdd(x: number, y: number): number &#123;</div><div class="line">return x+y; </div><div class="line">&#125;;</div><div class="line">console.log(myAdd(10,12))  //22</div><div class="line"></div><div class="line">js:</div><div class="line">function myAdd(x, y) &#123;</div><div class="line">    return x + y;</div><div class="line">&#125;</div><div class="line">;</div><div class="line">console.log(myAdd(10, 12));</div><div class="line"></div></pre></td></tr></table></figure></p>
+<pre><code>无返回值的函数：
+{% codeblock %}
+
+    ts:
+    function warnUser(): void {
+        console.log("This is my warning message");
+    }
+
+    js:
+    function warnUser() {
+        console.log("This is my warning message");
+    }
+    {% endcodeblock %}
+无返回值的函数，但是有返回值类型，就是void。
+</code></pre><p>1.2 void类型的变量。<br>    声明一个void类型的变量没有什么大用，因为你只能为它赋予undefined和null：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line">ts:</div><div class="line">    let inull: void = null;</div><div class="line">    let iundefined: void = undefined;</div><div class="line">js:</div><div class="line">    var inull = null;</div><div class="line">    var iundefined = undefined;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -453,6 +470,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/23/的新特性/" rel="prev" title="<转>typescript 2.0 的新特性">
+                <转>typescript 2.0 的新特性 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -534,7 +555,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
