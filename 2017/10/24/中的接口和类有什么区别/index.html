@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="初次接触typescript，记录一下学习笔记。下一篇 typescript基本类型[下] 创建greeter.ts文件 首先全局安装typescript1&amp;gt; npm install -g typescript 在命令行上，运行TypeScript编译器：1&amp;gt; tsc greeter.ts 在同级目录生成greeter.js文件1&amp;gt; node greeter.js在控制台查看打印">
+<meta name="description" content="接口就是用于声明函数，然后在类中去实现这些接口中的函数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="typescript基本类型[上]">
-<meta property="og:url" content="http://yoursite.com/2017/10/13/typescript基本类型-上/index.html">
+<meta property="og:title" content="typescript中的接口和类有什么区别">
+<meta property="og:url" content="http://yoursite.com/2017/10/24/中的接口和类有什么区别/index.html">
 <meta property="og:site_name" content="Micity&#39;s Notes">
-<meta property="og:description" content="初次接触typescript，记录一下学习笔记。下一篇 typescript基本类型[下] 创建greeter.ts文件 首先全局安装typescript1&amp;gt; npm install -g typescript 在命令行上，运行TypeScript编译器：1&amp;gt; tsc greeter.ts 在同级目录生成greeter.js文件1&amp;gt; node greeter.js在控制台查看打印">
-<meta property="og:updated_time" content="2017-10-23T02:47:34.730Z">
+<meta property="og:description" content="接口就是用于声明函数，然后在类中去实现这些接口中的函数。">
+<meta property="og:updated_time" content="2017-10-24T07:57:10.403Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="typescript基本类型[上]">
-<meta name="twitter:description" content="初次接触typescript，记录一下学习笔记。下一篇 typescript基本类型[下] 创建greeter.ts文件 首先全局安装typescript1&amp;gt; npm install -g typescript 在命令行上，运行TypeScript编译器：1&amp;gt; tsc greeter.ts 在同级目录生成greeter.js文件1&amp;gt; node greeter.js在控制台查看打印">
+<meta name="twitter:title" content="typescript中的接口和类有什么区别">
+<meta name="twitter:description" content="接口就是用于声明函数，然后在类中去实现这些接口中的函数。">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/13/typescript基本类型-上/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/24/中的接口和类有什么区别/"/>
 
 
 
 
 
-  <title>typescript基本类型[上] | Micity's Notes</title>
+  <title>typescript中的接口和类有什么区别 | Micity's Notes</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/13/typescript基本类型-上/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/24/中的接口和类有什么区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micity">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">typescript基本类型[上]</h1>
+          <h1 class="post-title" itemprop="name headline">typescript中的接口和类有什么区别</h1>
         
 
         <div class="post-meta">
@@ -318,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-13T17:07:03+08:00">
-                2017-10-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T10:04:52+08:00">
+                2017-10-24
               </time>
             
 
@@ -337,9 +337,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/13/typescript基本类型-上/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/24/中的接口和类有什么区别/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/13/typescript基本类型-上/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/24/中的接口和类有什么区别/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -347,7 +347,7 @@
 
           
           
-             <span id="/2017/10/13/typescript基本类型-上/" class="leancloud_visitors" data-flag-title="typescript基本类型[上]">
+             <span id="/2017/10/24/中的接口和类有什么区别/" class="leancloud_visitors" data-flag-title="typescript中的接口和类有什么区别">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -378,15 +378,10 @@
       
 
       
-        <p>初次接触typescript，记录一下学习笔记。<br>下一篇 <a href="http://vip-yangfeng.top/2017/10/23/typescript%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E4%B8%8B/" target="_blank" rel="external">typescript基本类型[下]</a></p>
-<p>创建greeter.ts文件</p>
-<p>首先全局安装typescript<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; npm install -g typescript</div></pre></td></tr></table></figure></p>
-<p>在命令行上，运行TypeScript编译器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; tsc greeter.ts</div></pre></td></tr></table></figure></p>
-<p>在同级目录生成greeter.js文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; node greeter.js</div></pre></td></tr></table></figure><br>在控制台查看打印结果<br><a id="more"></a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line">// 基础类型</div><div class="line"></div><div class="line">// boolean</div><div class="line">let isDoen: boolean = false;</div><div class="line"></div><div class="line">//number</div><div class="line">let num: number = 12345;</div><div class="line"></div><div class="line">//string</div><div class="line">let names: string = &quot;haha&quot;;</div><div class="line"></div><div class="line">//array</div><div class="line">let list: number[] = [1,2,3,4];  //方式1</div><div class="line">let list1: Array&lt;string&gt; = [&quot;a1&quot;,&quot;a2&quot;,&quot;a3&quot;,&quot;a4&quot;];  //方式2</div><div class="line"></div><div class="line">//元组 Tuple </div><div class="line">let x: [string, number, boolean] = [&quot;a1&quot;,12,true];  //注意类型要一一对应</div><div class="line"></div><div class="line"></div><div class="line">//枚举&lt;enum类型&gt;</div><div class="line">    /*</div><div class="line">    enum类型是对JavaScript标准数据类型的一个补充。</div><div class="line">    使用枚举可以为一组数值赋予友好的名字</div><div class="line">    */</div><div class="line">    enum Color &#123;Red, Green, Blue,test&#125;</div><div class="line">    let c: Color = Color.test;</div><div class="line"></div><div class="line">    //默认情况下，从0开始为元素编号。 你也可以手动的指定成员的数值。 例如，我们将上面的例子改成从 任意开始编号：</div><div class="line">    enum Color1 &#123;Red=2, Green, Blue,test&#125;</div><div class="line">    let c1: Color1 = Color1.test;</div><div class="line"></div><div class="line">    //也可以全部采用赋值</div><div class="line">    enum Color2 &#123;Red = &quot;a1&quot;, Green = &apos;a2&apos;, Blue = &apos;a4&apos;&#125;</div><div class="line">    let c2: Color2 = Color2.Green;</div><div class="line"></div><div class="line">    //枚举类型提供的一个便利是你可以由枚举的值得到它的名字。 例如，我们知道数值为2，但是不确定它映射到Color里的哪个名字，我们可以查找相应的名字：</div><div class="line">    enum Color3 &#123;Red = 1, Green, Blue&#125;</div><div class="line">    let colorName: string = Color3[2];</div><div class="line"></div><div class="line">//Any类型(不确定类型就是用any)</div><div class="line"></div><div class="line">//不清楚变量类型，所以不希望类型检查器进行检查而是直接让他们通过编译，所以可以使用any类型来标识这些变量。</div><div class="line">let notSure: any = 4;</div><div class="line">let str: any = &quot;4&quot;;</div><div class="line">//当你只知道一部分数据的类型时，any类型也是有用的。 比如，你有一个数组，它包含了不同的类型的数据：</div><div class="line">let listArr: any[] = [1, true, &quot;free&quot;];</div><div class="line">listArr[1] = 100;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">if(isDoen)&#123;</div><div class="line">    console.log(111)</div><div class="line">&#125;else&#123;</div><div class="line">    console.log(&quot;number:&quot;,num);</div><div class="line">    console.log(&quot;string:&quot;,names);</div><div class="line">    console.log(&quot;array:&quot;,list + &quot;-&quot;+list1);</div><div class="line">    console.log(&quot;元组：&quot;,x);</div><div class="line">    console.log(&quot;枚举：&quot;,c+&apos;-&apos;+c1+&apos;-&apos;+c2 +&apos;-&apos;+colorName)</div><div class="line">    console.log(&quot;Any:&quot;,typeof notSure+&quot;-&quot;+typeof str+&quot;-&quot;+listArr);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>结果如下<br>number: 12345<br>string: haha<br>array: 1,2,3,4-a1,a2,a3,a4<br>元组： [ ‘a1’, 12, true ]<br>枚举： 3-5-a2-Green<br>Any: number-string-1,100,free</p>
-<p>生成的greeter.js源码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">// 基础类型</div><div class="line">// boolean</div><div class="line">var isDoen = false;</div><div class="line">//number</div><div class="line">var num = 12345;</div><div class="line">//string</div><div class="line">var names = &quot;haha&quot;;</div><div class="line">//array</div><div class="line">var list = [1, 2, 3, 4]; //方式1</div><div class="line">var list1 = [&quot;a1&quot;, &quot;a2&quot;, &quot;a3&quot;, &quot;a4&quot;]; //方式2</div><div class="line">//元组 Tuple </div><div class="line">var x = [&quot;a1&quot;, 12, true]; //注意类型要一一对应</div><div class="line">//枚举&lt;enum类型&gt;</div><div class="line">/*</div><div class="line">enum类型是对JavaScript标准数据类型的一个补充。</div><div class="line">使用枚举可以为一组数值赋予友好的名字</div><div class="line">*/</div><div class="line">var Color;</div><div class="line">(function (Color) &#123;</div><div class="line">    Color[Color[&quot;Red&quot;] = 0] = &quot;Red&quot;;</div><div class="line">    Color[Color[&quot;Green&quot;] = 1] = &quot;Green&quot;;</div><div class="line">    Color[Color[&quot;Blue&quot;] = 2] = &quot;Blue&quot;;</div><div class="line">    Color[Color[&quot;test&quot;] = 3] = &quot;test&quot;;</div><div class="line">&#125;)(Color || (Color = &#123;&#125;));</div><div class="line">var c = Color.test;</div><div class="line">//默认情况下，从0开始为元素编号。 你也可以手动的指定成员的数值。 例如，我们将上面的例子改成从 任意开始编号：</div><div class="line">var Color1;</div><div class="line">(function (Color1) &#123;</div><div class="line">    Color1[Color1[&quot;Red&quot;] = 2] = &quot;Red&quot;;</div><div class="line">    Color1[Color1[&quot;Green&quot;] = 3] = &quot;Green&quot;;</div><div class="line">    Color1[Color1[&quot;Blue&quot;] = 4] = &quot;Blue&quot;;</div><div class="line">    Color1[Color1[&quot;test&quot;] = 5] = &quot;test&quot;;</div><div class="line">&#125;)(Color1 || (Color1 = &#123;&#125;));</div><div class="line">var c1 = Color1.test;</div><div class="line">//也可以全部采用赋值</div><div class="line">var Color2;</div><div class="line">(function (Color2) &#123;</div><div class="line">    Color2[&quot;Red&quot;] = &quot;a1&quot;;</div><div class="line">    Color2[&quot;Green&quot;] = &quot;a2&quot;;</div><div class="line">    Color2[&quot;Blue&quot;] = &quot;a4&quot;;</div><div class="line">&#125;)(Color2 || (Color2 = &#123;&#125;));</div><div class="line">var c2 = Color2.Green;</div><div class="line">//枚举类型提供的一个便利是你可以由枚举的值得到它的名字。 例如，我们知道数值为2，但是不确定它映射到Color里的哪个名字，我们可以查找相应的名字：</div><div class="line">var Color3;</div><div class="line">(function (Color3) &#123;</div><div class="line">    Color3[Color3[&quot;Red&quot;] = 1] = &quot;Red&quot;;</div><div class="line">    Color3[Color3[&quot;Green&quot;] = 2] = &quot;Green&quot;;</div><div class="line">    Color3[Color3[&quot;Blue&quot;] = 3] = &quot;Blue&quot;;</div><div class="line">&#125;)(Color3 || (Color3 = &#123;&#125;));</div><div class="line">var colorName = Color3[2];</div><div class="line">//Any类型</div><div class="line">//不清楚变量类型，所以不希望类型检查器进行检查而是直接让他们通过编译，所以可以使用any类型来标识这些变量。</div><div class="line">var notSure = 4;</div><div class="line">var str = &quot;4&quot;;</div><div class="line">//当你只知道一部分数据的类型时，any类型也是有用的。 比如，你有一个数组，它包含了不同的类型的数据：</div><div class="line">var listArr = [1, true, &quot;free&quot;];</div><div class="line">listArr[1] = 100;</div><div class="line">if (isDoen) &#123;</div><div class="line">    console.log(111);</div><div class="line">&#125;</div><div class="line">else &#123;</div><div class="line">    console.log(&quot;number:&quot;, num);</div><div class="line">    console.log(&quot;string:&quot;, names);</div><div class="line">    console.log(&quot;array:&quot;, list + &quot;-&quot; + list1);</div><div class="line">    console.log(&quot;元组：&quot;, x);</div><div class="line">    console.log(&quot;枚举：&quot;, c + &apos;-&apos; + c1 + &apos;-&apos; + c2 + &apos;-&apos; + colorName);</div><div class="line">    console.log(&quot;Any:&quot;, typeof notSure + &quot;-&quot; + typeof str + &quot;-&quot; + listArr);</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure></p>
-<p>嗯！！下班了，今天就先写到这里吧。明天继续….</p>
+        <p>接口就是用于声明函数，然后在类中去实现这些接口中的函数。<br><a id="more"></a><br>那么接口有什么用呢？设想如下需求：<br>要实现一个print函数，它将传入的对象打印出来。在实际实现上，它将调用对象的getContent方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function print(obj): void &#123;</div><div class="line">    console.log(obj.getContent());</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>但是这样书写是有问题的，你知道Typescript当中是有类型检查的，必须要确保obj中存在getContent方法才能让print函数正常工作不报错。</p>
+<p>比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">class Article &#123;</div><div class="line">    public function getContent(): String &#123;</div><div class="line">        return &apos;I am an article.&apos;;</div><div class="line">    &#125;   </div><div class="line">&#125;</div><div class="line"></div><div class="line">function print(obj: Article): void &#123;</div><div class="line">    console.log(obj.getContent());</div><div class="line">&#125;</div><div class="line"></div><div class="line">let a = new Article();</div><div class="line">print(a);</div></pre></td></tr></table></figure><br>但是这样的话print函数不就只能打印Article类的对象了吗，如果我想要让它能够打印不止一个类的对象呢？我如何保证他们都有getContent方法？<br>这时候就可以用到接口，来声明一个getContent方法，这样一来，每个实现该接口的类都必须实现getContent方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">//接口中声明一个方法</div><div class="line">interface ContentInterface &#123;</div><div class="line">    getContent(): String;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//声明一个Article类，该类实现ContentInterface接口</div><div class="line">class Article implements ContentInterface &#123;</div><div class="line">    // 必须实现getContent方法</div><div class="line">    public function getContent(): String &#123;</div><div class="line">        return &apos;I am an article.&apos;;</div><div class="line">    &#125;   </div><div class="line">&#125;</div><div class="line"></div><div class="line">//声明一个Passage类，该类实现ContentInterface接口</div><div class="line">class Passage implements ContentInterface &#123;</div><div class="line">    // 但实现方式可以不同</div><div class="line">    public function getContent(): String &#123;</div><div class="line">        return &apos;I am a passage.&apos;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class News implements ContentInterface &#123;</div><div class="line">    // 没有实现getContent方法，编译器会报错</div><div class="line">&#125;</div><div class="line"></div><div class="line">function print(obj: ContentInterface): void &#123;</div><div class="line">    // 实现了ContentInterface的对象是一定有getContent方法的</div><div class="line">    console.log(obj.getContent());</div><div class="line">&#125;</div><div class="line"></div><div class="line">//实例化一个子类</div><div class="line">let a = new Article();</div><div class="line">let p = new Passage();</div><div class="line"></div><div class="line">print(a); // &quot;I am an article.&quot;</div><div class="line">print(p); // &quot;I am a passage.&quot;</div><div class="line"></div></pre></td></tr></table></figure>
+<p>有过后端开发经验的人理解起来会更容易些。</p>
 
       
     </div>
@@ -452,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/11/为NexT主题添加文章阅读量统计功能/" rel="next" title="为NexT主题添加文章阅读量统计功能">
-                <i class="fa fa-chevron-left"></i> 为NexT主题添加文章阅读量统计功能
+              <a href="/2017/10/24/typeScript函数/" rel="next" title="typeScript函数">
+                <i class="fa fa-chevron-left"></i> typeScript函数
               </a>
             
           </div>
@@ -462,8 +457,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/17/2d与3d详解/" rel="prev" title="css3中2d与3d转换详解">
-                css3中2d与3d转换详解 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/24/typescript中的类/" rel="prev" title="typescript中的类">
+                typescript中的类 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -768,9 +763,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/10/13/typescript基本类型-上/';
-          this.page.identifier = '2017/10/13/typescript基本类型-上/';
-          this.page.title = 'typescript基本类型[上]';
+          this.page.url = 'http://yoursite.com/2017/10/24/中的接口和类有什么区别/';
+          this.page.identifier = '2017/10/24/中的接口和类有什么区别/';
+          this.page.title = 'typescript中的接口和类有什么区别';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
