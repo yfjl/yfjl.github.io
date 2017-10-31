@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面 它是非常容易去处理以下几种事情的： 提供错误回调询问操作者问题获取并解析用户输入检测用户回答是否合法管理多层级的提示note: Inquirer.js仅仅给用户提供了一个漂亮的界面和提出问题流的方式。假如说你正在寻找的是完全成熟的命令行调试程序，那么我推荐你去看看commander， vorpal，args。 安装1npm">
+<meta name="description" content="Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面 它是非常容易去处理以下几种事情的： 提供错误回调询问操作者问题获取并解析用户输入检测用户回答是否合法管理多层级的提示note: Inquirer.js仅仅给用户提供了一个漂亮的界面和提出问题流的方式。假如说你正在寻找的是完全成熟的命令行调试程序，那么我推荐你去看看commander， vorpal，args。 安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nodejs交互式命令行工具 Inquirer.js">
 <meta property="og:url" content="http://yoursite.com/2017/10/30/Inquirer-js/index.html">
 <meta property="og:site_name" content="Micity&#39;s Notes">
-<meta property="og:description" content="Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面 它是非常容易去处理以下几种事情的： 提供错误回调询问操作者问题获取并解析用户输入检测用户回答是否合法管理多层级的提示note: Inquirer.js仅仅给用户提供了一个漂亮的界面和提出问题流的方式。假如说你正在寻找的是完全成熟的命令行调试程序，那么我推荐你去看看commander， vorpal，args。 安装1npm">
-<meta property="og:updated_time" content="2017-10-30T08:01:25.469Z">
+<meta property="og:description" content="Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面 它是非常容易去处理以下几种事情的： 提供错误回调询问操作者问题获取并解析用户输入检测用户回答是否合法管理多层级的提示note: Inquirer.js仅仅给用户提供了一个漂亮的界面和提出问题流的方式。假如说你正在寻找的是完全成熟的命令行调试程序，那么我推荐你去看看commander， vorpal，args。 安装">
+<meta property="og:updated_time" content="2017-10-31T06:15:39.803Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nodejs交互式命令行工具 Inquirer.js">
-<meta name="twitter:description" content="Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面 它是非常容易去处理以下几种事情的： 提供错误回调询问操作者问题获取并解析用户输入检测用户回答是否合法管理多层级的提示note: Inquirer.js仅仅给用户提供了一个漂亮的界面和提出问题流的方式。假如说你正在寻找的是完全成熟的命令行调试程序，那么我推荐你去看看commander， vorpal，args。 安装1npm">
+<meta name="twitter:description" content="Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面 它是非常容易去处理以下几种事情的： 提供错误回调询问操作者问题获取并解析用户输入检测用户回答是否合法管理多层级的提示note: Inquirer.js仅仅给用户提供了一个漂亮的界面和提出问题流的方式。假如说你正在寻找的是完全成熟的命令行调试程序，那么我推荐你去看看commander， vorpal，args。 安装">
 
 
 
@@ -381,7 +381,8 @@
         <p>Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面</p>
 <p>它是非常容易去处理以下几种事情的：</p>
 <p>提供错误回调<br>询问操作者问题<br>获取并解析用户输入<br>检测用户回答是否合法<br>管理多层级的提示<br>note: Inquirer.js仅仅给用户提供了一个漂亮的界面和提出问题流的方式。假如说你正在寻找的是完全成熟的命令行调试程序，那么我推荐你去看看commander， vorpal，args。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install inquirer</div></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install inquirer</div></pre></td></tr></table></figure>
 <p>编写一个小demo——index.js</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var inquirer = require(&apos;inquirer&apos;)</div><div class="line">inquirer.prompt([</div><div class="line">  &#123;</div><div class="line">    type: &apos;confirm&apos;,</div><div class="line">    name: &apos;test&apos;,</div><div class="line">    message: &apos;Are you handsome?&apos;,</div><div class="line">    default: true</div><div class="line">  &#125;</div><div class="line">]).then((answers) =&gt; &#123;</div><div class="line">  console.log(&apos;结果为:&apos;)</div><div class="line">  console.log(answers)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>运行一波</p>
