@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="每一个node.js执行文件，都自动创建一个module对象，同时，module对象会创建一个叫exports的属性，初始化的值是 {}">
+<meta name="description" content="1、我们似乎一开始工作就听到了白盒与黑盒？是黑白无常吗？到底他妈的是什么？答：white-box testing（白盒测试） black-box testing（黑盒测试），没错，名称的由来很简单，直译老外的………………没办法谁让他们先进呢白盒：就是直接从程序的源代码里开始搞，其实主要是测试API，再细点说，就是测试public的方法（当然还有静态代码走查啥的，也得算到这里头，还有语句覆盖（就是代">
 <meta property="og:type" content="article">
-<meta property="og:title" content="module.exports 与 exports 的区别解释">
-<meta property="og:url" content="http://yoursite.com/2017/10/10/exports/index.html">
+<meta property="og:title" content="白盒与黑盒到底什么？">
+<meta property="og:url" content="http://yoursite.com/2017/10/31/白盒与黑盒到底什么？/index.html">
 <meta property="og:site_name" content="Micity&#39;s Notes">
-<meta property="og:description" content="每一个node.js执行文件，都自动创建一个module对象，同时，module对象会创建一个叫exports的属性，初始化的值是 {}">
-<meta property="og:updated_time" content="2017-10-10T08:25:54.461Z">
+<meta property="og:description" content="1、我们似乎一开始工作就听到了白盒与黑盒？是黑白无常吗？到底他妈的是什么？答：white-box testing（白盒测试） black-box testing（黑盒测试），没错，名称的由来很简单，直译老外的………………没办法谁让他们先进呢白盒：就是直接从程序的源代码里开始搞，其实主要是测试API，再细点说，就是测试public的方法（当然还有静态代码走查啥的，也得算到这里头，还有语句覆盖（就是代">
+<meta property="og:updated_time" content="2017-10-31T05:34:58.734Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="module.exports 与 exports 的区别解释">
-<meta name="twitter:description" content="每一个node.js执行文件，都自动创建一个module对象，同时，module对象会创建一个叫exports的属性，初始化的值是 {}">
+<meta name="twitter:title" content="白盒与黑盒到底什么？">
+<meta name="twitter:description" content="1、我们似乎一开始工作就听到了白盒与黑盒？是黑白无常吗？到底他妈的是什么？答：white-box testing（白盒测试） black-box testing（黑盒测试），没错，名称的由来很简单，直译老外的………………没办法谁让他们先进呢白盒：就是直接从程序的源代码里开始搞，其实主要是测试API，再细点说，就是测试public的方法（当然还有静态代码走查啥的，也得算到这里头，还有语句覆盖（就是代">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/10/exports/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/31/白盒与黑盒到底什么？/"/>
 
 
 
 
 
-  <title>module.exports 与 exports 的区别解释 | Micity's Notes</title>
+  <title>白盒与黑盒到底什么？ | Micity's Notes</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/exports/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/白盒与黑盒到底什么？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micity">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">module.exports 与 exports 的区别解释</h1>
+          <h1 class="post-title" itemprop="name headline">白盒与黑盒到底什么？</h1>
         
 
         <div class="post-meta">
@@ -318,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T16:19:43+08:00">
-                2017-10-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-31T13:33:52+08:00">
+                2017-10-31
               </time>
             
 
@@ -337,9 +337,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/10/exports/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/31/白盒与黑盒到底什么？/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/10/exports/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/31/白盒与黑盒到底什么？/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -347,7 +347,7 @@
 
           
           
-             <span id="/2017/10/10/exports/" class="leancloud_visitors" data-flag-title="module.exports 与 exports 的区别解释">
+             <span id="/2017/10/31/白盒与黑盒到底什么？/" class="leancloud_visitors" data-flag-title="白盒与黑盒到底什么？">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -378,9 +378,11 @@
       
 
       
-        <p>每一个node.js执行文件，都自动创建一个module对象，同时，module对象会创建一个叫exports的属性，初始化的值是 {}<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">// -------- node.js core --------</div><div class="line"></div><div class="line">var module = &#123;</div><div class="line">  exports: &#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">exports = module.exports;</div><div class="line"></div><div class="line">// -------- 下面正常写代码 --------</div><div class="line"></div><div class="line">exports.name = &apos;Alan&apos;;</div><div class="line">exports.test = function () &#123;</div><div class="line">  console.log(&apos;hi&apos;)</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 给导出的对象添加属性，直接这样就好了</div><div class="line">console.log(module) // &#123; exports: &#123; name: &apos;Alan&apos;, test: [Function] &#125; &#125;</div><div class="line"></div><div class="line">exports = &#123;</div><div class="line">  name: &apos;Bob&apos;,</div><div class="line">  add: function (a, b) &#123;</div><div class="line">    return a + b;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 不过 ① exports 是一个引用，直接赋值给它，只是让这个变量等于另外一个引用</div><div class="line">console.log(exports) // &#123; name: &apos;Bob&apos;, add: [Function] &#125;</div><div class="line">// 并不会修改到导出的对象</div><div class="line">console.log(module) // &#123; exports: &#123; name: &apos;Alan&apos;, test: [Function] &#125; &#125;</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  name: &apos;Bob&apos;,</div><div class="line">  add: function (a, b) &#123;</div><div class="line">    return a + b;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// ∵① 所以 只有通过 module.exports 才能真正修改到 exports 本身</div><div class="line">console.log(module) // &#123; exports: &#123; name: &apos;Bob&apos;, add: [Function] &#125; &#125;</div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
-<blockquote><p>相关介绍：<a href="http://javascript.ruanyifeng.com/nodejs/module.html#toc0" target="_blank" rel="external">http://javascript.ruanyifeng.com/nodejs/module.html#toc0</a></p>
-</blockquote>
+        <p>1、我们似乎一开始工作就听到了白盒与黑盒？是黑白无常吗？到底他妈的是什么？<br>答：white-box testing（白盒测试） black-box testing（黑盒测试），没错，名称的由来很简单，直译老外的………………没办法谁让他们先进呢<br>白盒：就是直接从程序的源代码里开始搞，其实主要是测试API，再细点说，就是测试public的方法（当然还有静态代码走查啥的，也得算到这里头，还有语句覆盖（就是代码有没有得到执行））<br>黑盒：那就直接通过运行程序，开始搞呗，直接使用应用，看不到源代码，也就是我们常说的功能测试了……<br>总结：测试行为根据不同的角度，有非常多的分类，可见白盒与黑盒是根据是否能看见源代码为依据的。<br><a id="more"></a></p>
+<h2 id="2、细说黑盒"><a href="#2、细说黑盒" class="headerlink" title="2、细说黑盒"></a>2、细说黑盒</h2><p>答：网上一搜黑盒测试，好家伙，立马就有分类了，黑盒包括功能测试与性能测试<br>功能测试又细分：逻辑测试、ui测试、易用性测试、兼容性测试<br>性能测试又细分：空间测试、时间测试<br>功能测试细分内容白话解释<br>逻辑测试：说白了就是人机交互事件测试，例如app里，你点击按钮啦什么的<br>ui测试：就是你眼睛看到的和设计稿是否一致<br>易用性测试：那就更简单了，就是用户体验，你用的爽不爽<br>兼容性测试：操作系统可以运行在不同的硬件，like Android运行在很多不同的手机上，你要把你的app在每一个操作系统上遍历一遍<br>空间测试：所谓空间，是你的app占用操作系统多少资源<br>时间测试：你的app占用了操作系统资源，最直接影响的就是启动时间、加载时间，你用直观的眼睛看到！</p>
+<h2 id="3、再议白盒"><a href="#3、再议白盒" class="headerlink" title="3、再议白盒"></a>3、再议白盒</h2><p>答：包含有：<br>静态代码走查（当然人工看起来就得累死，必须有框架啊）<br>代码覆盖率（就是每一条语句有没有得到执行，有的开发哥哥，写的判断，其实有的语句一辈子都执行不到，还有一些像废弃的一些方法）<br>逻辑功能走查（通常情况下是直接调用public 的方法）<br>三个都是白盒测试常用的一些测试内容</p>
+<h2 id="4、最后总结"><a href="#4、最后总结" class="headerlink" title="4、最后总结"></a>4、最后总结</h2><p>白盒：从代码里做，实例方法，就拿到实例对象调用，静态方法，就拿到类调用。可做public，也可做private，总之想做就可以做，单元测试，就是白盒测试的一种……<br>黑盒：就是功能测试、手工测试，人肉测试………………………………</p>
+
       
     </div>
     
@@ -445,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/10/npm/" rel="next" title="npm镜像站">
-                <i class="fa fa-chevron-left"></i> npm镜像站
+              <a href="/2017/10/30/Inquirer-js/" rel="next" title="nodejs交互式命令行工具 Inquirer.js">
+                <i class="fa fa-chevron-left"></i> nodejs交互式命令行工具 Inquirer.js
               </a>
             
           </div>
@@ -455,8 +457,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/10/webpack/" rel="prev" title="vue2+webpack+scss+typescript+pug  入门配置详细教程">
-                vue2+webpack+scss+typescript+pug  入门配置详细教程 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/31/loader编写到发布/" rel="prev" title="webpack loader编写到发布">
+                webpack loader编写到发布 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -519,8 +521,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -604,6 +615,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2、细说黑盒"><span class="nav-number">1.</span> <span class="nav-text">2、细说黑盒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、再议白盒"><span class="nav-number">2.</span> <span class="nav-text">3、再议白盒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、最后总结"><span class="nav-number">3.</span> <span class="nav-text">4、最后总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -761,9 +788,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/10/10/exports/';
-          this.page.identifier = '2017/10/10/exports/';
-          this.page.title = 'module.exports 与 exports 的区别解释';
+          this.page.url = 'http://yoursite.com/2017/10/31/白盒与黑盒到底什么？/';
+          this.page.identifier = '2017/10/31/白盒与黑盒到底什么？/';
+          this.page.title = '白盒与黑盒到底什么？';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
