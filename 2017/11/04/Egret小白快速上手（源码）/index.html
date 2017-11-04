@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="写在前面的话你可能需要了解引擎的安装。 本章将开始指导大家来编写代码，并让自己的一些想法用Egret运行起来。 首先确保你对面向对象编程有基本的了解，如果熟悉一门基础的面向对象语言，比如AS3或Java，那就更好了。如不了解，请先阅读OOP入门的文章或书籍。 本教程使用TypeScript编写。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Egret小白快速上手（源码）">
+<meta property="og:url" content="http://yoursite.com/2017/11/04/Egret小白快速上手（源码）/index.html">
+<meta property="og:site_name" content="Micity&#39;s Notes">
+<meta property="og:description" content="写在前面的话你可能需要了解引擎的安装。 本章将开始指导大家来编写代码，并让自己的一些想法用Egret运行起来。 首先确保你对面向对象编程有基本的了解，如果熟悉一门基础的面向对象语言，比如AS3或Java，那就更好了。如不了解，请先阅读OOP入门的文章或书籍。 本教程使用TypeScript编写。">
+<meta property="og:updated_time" content="2017-11-04T06:18:08.590Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Egret小白快速上手（源码）">
+<meta name="twitter:description" content="写在前面的话你可能需要了解引擎的安装。 本章将开始指导大家来编写代码，并让自己的一些想法用Egret运行起来。 首先确保你对面向对象编程有基本的了解，如果熟悉一门基础的面向对象语言，比如AS3或Java，那就更好了。如不了解，请先阅读OOP入门的文章或书籍。 本教程使用TypeScript编写。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'T3YH5SJU7N',
+      apiKey: 'dc0b9923615d31482af17a2a93b436e6',
+      indexName: 'yang_feng',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/04/Egret小白快速上手（源码）/"/>
+
+
+
+
+
+  <title>Egret小白快速上手（源码） | Micity's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c5e8d62ac07611cb95b46c2305694343";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Micity's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/04/Egret小白快速上手（源码）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micity">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507626458664&di=b436858cce2f58eafc289d8d248416cc&imgtype=0&src=http%3A%2F%2Fwww.qqzhi.com%2Fuploadpic%2F2014-09-16%2F053119768.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Micity's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Egret小白快速上手（源码）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-04T13:43:42+08:00">
+                2017-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/04/Egret小白快速上手（源码）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/11/04/Egret小白快速上手（源码）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/11/04/Egret小白快速上手（源码）/" class="leancloud_visitors" data-flag-title="Egret小白快速上手（源码）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>写在前面的话<br>你可能需要了解引擎的安装。</p>
+<p>本章将开始指导大家来编写代码，并让自己的一些想法用Egret运行起来。</p>
+<p>首先确保你对面向对象编程有基本的了解，如果熟悉一门基础的面向对象语言，比如AS3或Java，那就更好了。如不了解，请先阅读OOP入门的文章或书籍。</p>
+<p>本教程使用TypeScript编写。<br><a id="more"></a></p>
+<h2 id="编写一个hello-World"><a href="#编写一个hello-World" class="headerlink" title="编写一个hello World"></a>编写一个hello World</h2><p>官网有详细的安装教程<br><a href="http://developer.egret.com/cn/github/egret-docs/Engine2D/getStarted/helloWorld/index.html" target="_blank" rel="external">http://developer.egret.com/cn/github/egret-docs/Engine2D/getStarted/helloWorld/index.html</a></p>
+<h2 id="清理项目"><a href="#清理项目" class="headerlink" title="清理项目"></a>清理项目</h2><p>到这里，工作环境建立起来了。接下来我们对项目进行不同的修改调整，并运行测试。来学习不同方面的Egret编程知识。</p>
+<p>对新手来说，egret默认创建的项目显示了较为复杂的内容。为了不影响我们的学习过程，我们首先将这些显示内容清除掉。重新开始。</p>
+<p>打开Main.ts文件，将createGameScene中的内容全部删除，并将createGameScene方法后边的所有方法删除。</p>
+<h2 id="Egret程序的入口"><a href="#Egret程序的入口" class="headerlink" title="Egret程序的入口"></a>Egret程序的入口</h2><p>像所有的开发语言一样，总有一个入口，整个程序都从这里开始启动。熟悉类C系语言的开发者，如C++和Java都了解这些语言会从一个静态的main函数入口。</p>
+<p>而Egret语言的入口类似于ActionScript，是从一个称之为文档类的类作为入口的。当然，具体点儿，就是以这个文档类的构造函数作为入口。</p>
+<p>文档类是可以配置的，每个Egret项目都有一个配置文件egretProperties.json，可以在Egret项目的根目录找到这个文件，后边我们称之为项目设定文件。</p>
+<p>项目设定文件是一个文本文件，可以打开直接编辑。打开该文件，会看到有一个document_class的属性，其值默认为”Main”，就是指Main.ts中所定义的类Main。当然这只是个默认值，我们可以根据自己的喜好随意修改，只要确保项目设定文件中的document_class属性值所指定的类名在项目中有其类定义即可。</p>
+<h2 id="绘制一个单色背景"><a href="#绘制一个单色背景" class="headerlink" title="绘制一个单色背景"></a>绘制一个单色背景</h2><p>通常游戏的画面都需要一个背景，让我们就从这最基本的显示开始着手！ 背景可以是一张图片，这需要将图片作为资源载入，后边我们会学习这种方式。</p>
+<p>现在我们用最简单直接的方式，让Egret自己绘制一个单色的背景。</p>
+<p>这个背景，实际上是绘制了一个给定填充颜色的矩形。打开Main.ts，在事先清空的createGameScene方法内加入如下代码： var bg:egret.Shape = new egret.Shape; 这是我们第一次输入代码，因此有必要说明一下，Egret编写代码都使用TypeScript，如果对这门语言不是很了解，请先查阅相关资料。</p>
+<p>这里，我们首先建立一个egret.Shape对象bg，这是由于egret.Shape对象有图形绘制功能。我们要绘制的背景的工作就用这个对象来完成。</p>
+<p>Egret官方提供的类都是在egret包内的，所以后边为方便表示，我们会省略到包名，直接用Shape来表示egret.Shape。其他类也一样。</p>
+<p>创建好之后，开始绘制： bg.graphics.beginFill( 0x336699 ); bg.graphics.drawRect( 0, 0, this.stage.stageWidth, this.stage.stageHeight ); bg.graphics.endFill(); Shape对象中有graphic属性，用来专门负责图形绘制的工作。 第1行，在绘制前，需要定义图形的填充颜色，我们给出一个偏蓝的颜色。注意颜色值跟大部分其他OOP语言一样，是用十六进制的RGB颜色的组合来表示。用beginFill来设置填充颜色。 第2行绘制矩形。用drawRect来绘制矩形。参数部分，给出4个数字确定了一个矩形的区域，这4个参数分为两组，分别这顶区域的起点坐标和终点坐标。 注意这两组坐标，由于我们绘制的背景要刚好覆盖整个舞台区域，所以起点坐标为(0,0)，终点坐标为舞台的宽度和舞台的高度。这一对尺寸可以直接从前一节所讲到的this.stage中获得。 类似的绘制函数还有drawCircle等，可以绘制不同的简单形状。 第3行endFill用来结束绘制工作。</p>
+<p>到这里，一张跟舞台同样大的浅蓝色矩形图形已经准备好。但，接下来我们还需要将其添加到显示结构中，才可以在运行时显示出来： this.addChild( bg ); 这里，我们第一次使用addChild，这是Egret引擎操作显示列表的一个最常用的方法，就是将某个显示对象添加到某个显示容器上。 (注意，文档类实例添加到舞台是引擎默认完成的，不需要我们写代码完成该任务。) 另外，这里使用super是由于所调用的方法addChild是当前类的父类定义的。当然根据个人习惯，这里完全可以用this.addChild。参数直接传入bg。</p>
+<p>运行项目，将会看到前面图中所示的效果，浏览器显示一个矩形背景！</p>
+<h2 id="调整屏幕适配模式"><a href="#调整屏幕适配模式" class="headerlink" title="调整屏幕适配模式"></a>调整屏幕适配模式</h2><p>虽然显示出来了，但我们会发现一个现象，就是显示区域在浏览器中并没有占满。这是由于Egret项目建立后，默认的屏幕适配模式是不进行缩放的。</p>
+<p>而Egret目前应用最广泛的是移动设备，通常需要的屏幕适配模式是整体显示。</p>
+<p>Egret提供了几种常规的适配模式，刚才所说的不进行缩放是一种，在Egret中表示为NO_SCALE。占满屏幕是另一种，为SHOW_ALL。 我们可以在egret_loader.js中修改适配模式，打开项目launcher目录下的egret_loader.js文件，找到var scaleMode开始的代码行，将等号右边的内容修改为SHOW_ALL： var scaleMode = egret.StageScaleMode.SHOW_ALL; 刷新页面，会发现，蓝色背景已经占满浏览器屏幕：</p>
+<p>这里，会发现，背景两边会有黑边，这是由于Egret显示</p>
+<p>显示一些文字 显示文字是常用的功能，接下来，我们显示一段简单的文字。比如”I’m Jack, I will use Egret create a fantasy mobile game!”——当然，如果你不叫Jack，可以换成自己的名字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var tx:egret.TextField = new egret.TextField;</div><div class="line">tx.text = &quot;I&apos;m Jack, I will use Egret create a fantasy mobile game!&quot;; </div><div class="line">tx.size = 32; </div><div class="line">this.addChild( tx );</div></pre></td></tr></table></figure>
+<p>格式有些乱，我们稍微调整一下。紧接着加入如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tx.x = 20; tx.y = 20; </div><div class="line">tx.width = this.stage.stageWidth - 40;</div></pre></td></tr></table></figure></p>
+<p>注意前两行，分别设置了文本对象的x和y坐标。在Egret中，设置坐标是以锚点为基准的，锚点默认位于显示对象的左上角。当然我们可以根据需要设置锚点的位置。</p>
+<p>在Egret中，我们可以对文字进行更复杂的设置，比如设定颜色、加粗、斜体，甚至可以设置不同的文字应用不同的格式。具体用法会在专门的章节中介绍。</p>
+<h2 id="响应用户操作"><a href="#响应用户操作" class="headerlink" title="响应用户操作"></a>响应用户操作</h2><p>不管我们制作游戏还是某种应用，用户的交互都是必备的。 在前一节的基础上，我们就对这段文字添加一些响应操作。比如，改变颜色：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tx.touchEnabled = true; </div><div class="line">tx.addEventListener( egret.TouchEvent.TOUCH_TAP, this.touchHandler, this );</div></pre></td></tr></table></figure></p>
+<p>注意，第一行设置touchEnabled为true，意即允许该显示对象响应Touch事件，这是Egret中特别需要注意的问题。因为所有的显示对象，默认都是不响应Touch事件的，这是基于性能考虑，因为打开对这种事件的响应，是对性能有不可忽略的影响的。 其中第二行代码新增一个方法的引用，这就是事件处理函数，我们需要事件处理函数中对用户操作做出对应的反应。 在Main类中，加入如下代码： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">private touchHandler( evt:egret.TouchEvent ):void&#123;</div><div class="line">    var tx:egret.TextField = evt.currentTarget;</div><div class="line">    tx.textColor = 0x00ff00; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译运行，然后点击这段文字，会如下图改变颜色：</p>
+<p>这里的事件处理函数是用一个类方法来实现，还有一种简写的方法，直接作为匿名函数传入： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tx.addEventListener( egret.TouchEvent.TOUCH_TAP</div><div class="line">    , function( evt:egret.TouchEvent ):void&#123;    </div><div class="line">        tx.textColor = 0x00ff00; </div><div class="line">    &#125;, this );</div></pre></td></tr></table></figure>
+<p>本例主要是使用用户轻触事件。在Egret中，还有各种其他方面的事件，比如网络通信相关的事件、计时器相关事件等等。在需要这种事件的地方，我们……再进一步讲解。</p>
+<h2 id="资源加载"><a href="#资源加载" class="headerlink" title="资源加载"></a>资源加载</h2><p>到目前为止，我们所写的代码，都不需要加载任何外部资源，或者其他形式的网络通讯。 不可否认的是，创建内容生动的游戏，总是需要有足够的图片来表现内容。</p>
+<p>Egret中所有的资源都是动态加载的。</p>
+<h2 id="资源加载清单"><a href="#资源加载清单" class="headerlink" title="资源加载清单"></a>资源加载清单</h2><p>Egret的资源加载方式，是以一个资源加载清单为基础的。 如果资源是我们要购买的若干物品，资源加载配置就好比是购物清单。我们首先把需要购买的物品条理清晰地列在清单上，就可以按步骤有条不紊的去购买其上所列出的物品。</p>
+<p>在Egret中，我们使用json格式作为RES资源加载配置文件的格式。这种格式使用方便，你甚至可以用记事本来编写它。同时，json格式也是模式JavaScript支持的一种解析格式。我们可以得到最快的解析处理。</p>
+<p>通常Egret中的资源加载配置文件位于项目目录的resource内，取名resource.json。Egret项目在创建时已经包含该文件，在我们之前创建的HelloWorld项目中可以看到：</p>
+<p>默认的resource.json已经包含若干资源的配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;resources&quot;: [</div><div class="line">    &#123;</div><div class="line">      &quot;name&quot;: &quot;bgImage&quot;,</div><div class="line">      &quot;type&quot;: &quot;image&quot;,</div><div class="line">      &quot;url&quot;: &quot;assets/bg.jpg&quot;</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      &quot;name&quot;: &quot;egretIcon&quot;,</div><div class="line">      &quot;type&quot;: &quot;image&quot;,</div><div class="line">      &quot;url&quot;: &quot;assets/egret_icon.png&quot;</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      &quot;name&quot;: &quot;description&quot;,</div><div class="line">      &quot;type&quot;: &quot;json&quot;,</div><div class="line">      &quot;url&quot;: &quot;config/description.json&quot;</div><div class="line">    &#125;</div><div class="line">  ],</div><div class="line">  &quot;groups&quot;: [</div><div class="line">    &#123;</div><div class="line">      &quot;name&quot;: &quot;preload&quot;,</div><div class="line">      &quot;keys&quot;: &quot;bgImage,egretIcon&quot;</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>接下来，我们就从默认的配置来了解资源配置的规则。</p>
+<p>配置文件中的”resource”我们可以视为资源库，当前游戏使用到的资源都可以放到这里。其中以资源为单位分别列出。每一项资源单位都包含三个属性：</p>
+<p>name：表示这个资源的唯一标识符。注意资源比较多的项目应确定一套命名规则，避免不同资源命名之间重复或太接近而易混淆。</p>
+<p>type：表示资源类型。紧跟着会进一步讲解其含义及取值规则。</p>
+<p>url：表示当前资源文件的路径。通常我们约定配置类型的资源置于config子目录下；其他类型置于assets子目录下。</p>
+<p>每个”resource”单位中的type，是Egret约定好的若干类型，最常用的有以下类型：</p>
+<p>image：表示各种常见的图片类型，包括PNG和JPG格式，载入后将解析为egret.Texture对象；</p>
+<p>text：表示文本类型，即文本文件，载入后将解析为string对象；</p>
+<p>json：也是一种文本类型，不过内容是json格式的，载入后将直接解析为json对象；</p>
+<p>很多情况下，我们在某种游戏场合，需要同时加载若干资源，用以准备后续的游戏流程显示。Egret已经考虑到这种情况，使得我们可以将若干项资源定义为一个资源组。需要时，只需加载这个资源组即可。 “groups”是预加载资源组的配置，每项是一个资源组。 每一个资源组须包含两个属性：</p>
+<p>name：表示资源组的组名</p>
+<p>keys：表示这个资源组包含哪些资源，里面的逗号分隔的每一个字符串，都与”resource”下的资源name对应。</p>
+<p>注意：资源组的配置没有任何限制，比如同一个资源可以存在于多个资源组里。</p>
+<h2 id="在程序中加载资源"><a href="#在程序中加载资源" class="headerlink" title="在程序中加载资源"></a>在程序中加载资源</h2><p>在Main.ts中的开头部分，我们会发现大量使用RES开头的代码，RES就是专门用来加载资源的类，这些代码我们稍后再分析，首先我们完成把这些图片载入所需的步骤。</p>
+<p>注意，在onConfigComplete的最后，有一行加载资源组的代码： RES.loadGroup(“preload”);</p>
+<p>很显然，loadGroup就是用来加载资源组的。由于我们将资源组命名为heroes，因此这里代码中的preload需要改成heroes。 资源加载结束后，我们需要判断所加载的资源是哪个资源组的，所以onResourceLoadComplete中的preload也需要改成heroes。</p>
+<p>完成这些改动后，Egret将会加载heroes资源组，并且程序执行到createGameScene时，资源组已经加载完成。</p>
+<p>在createGameScene最后添加如下代码： console.log( “createGameScene”, RES.getRes(“hero-01”) );</p>
+<p>编译，运行，打开浏览器的开发者工具</p>
+<h2 id="加载资源的代码分析"><a href="#加载资源的代码分析" class="headerlink" title="加载资源的代码分析"></a>加载资源的代码分析</h2><p>在进一步显示图片前，我们了解一下资源加载的代码。 再回过头看看加载资源的代码。加载资源的过程整体分为两部分，第一步首先加载资源配置清单，第二步就是加载资源。</p>
+<p>在onAddToStage方法中，有代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, </div><div class="line">this.onConfigComplete, this); RES.loadConfig(&quot;resource/resource.json&quot;, &quot;resource/&quot;);</div></pre></td></tr></table></figure>
+<p>这是专门用来加载资源配置的代码。 首先添加一个针对CONFIG_COMPLETE事件的侦听，然后执行加载。 配置加载完成时，即会执行onConfigComplete方法。</p>
+<p>在onConfigComplete方法中，有如下 ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);</div><div class="line">RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);</div><div class="line">RES.addEventListener(RES.ResourceEvent.GROUPLOADERROR, this.onResourceLoadError, this);</div><div class="line">RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);</div><div class="line">RES.loadGroup(&quot;heroes&quot;);</div></pre></td></tr></table></figure>
+<p>第一行移除了对CONFIG_COMPLETE事件的侦听，这是一个推荐做法，因为我们不再需要加载配置文件，该侦听也就没有作用了。及时移除事件侦听可以删除不必要的引用，使得不再需要使用的对象能被垃圾回收及时清理，避免内存泄露。</p>
+<p>接着，加入了对资源组事件的侦听。</p>
+<p>首先是对资源组加载完成的侦听，这是必须的，因为程序的流程需要从这里进行，即程序需要在某种资源加载完成后进行预期的后续流程。 另外，任何加载都需要稳定的网络，而网络出现各种中断是很常见的情况，所以需要添加对加载错误事件的侦听，以在这种情况作出相应的处理，通常是重新加载或者是提示用户检查网络。 可选的，可以加入对加载进度的侦听，通常是通过某种样式的进度条显示给用户当前进度，这在所加载的内容需要耗时较长时对于用户体验非常重要。</p>
+<p>对于加载错误和进度的侦听处理，我们这里不做过多说明。</p>
+<p>在加载完成的处理，即onResourceLoadComplete中，通过检查当前加载完成的资源组名称，来做对应的处理。确认当前加载的资源组是heroes后，便进入程序的正式流程createGameScene中。</p>
+<h2 id="显示图片"><a href="#显示图片" class="headerlink" title="显示图片"></a>显示图片</h2><p>事实上，对于显示图片来说，相应资源加载完成，已经完成了95%的工作。接下来就是水到渠成了。</p>
+<p>删掉文字部分的代码，即所有tx变量相关的代码。只留下绘制背景的代码。</p>
+<h2 id="显示第一个超级英雄"><a href="#显示第一个超级英雄" class="headerlink" title="显示第一个超级英雄"></a>显示第一个超级英雄</h2><p>然后加入如下代码，来显示我们所载入的图片资源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var batman:egret.Bitmap = new egret.Bitmap( RES.getRes(&quot;hero-01&quot;) );</div><div class="line">batman.x = -30;</div><div class="line">batman.y = 20;</div><div class="line">this.addChild( batman );</div></pre></td></tr></table></figure>
+<p>显示所需的图片，在Egret对应的类就是Bitmap。 使用Bitmap创建一个图片时，在其构造函数中传入RES载入的资源，这里取得的是一个图片的资源，图片资源通过getRes获得的将是一个Texture对象。 这段代码用01号英雄图片资源创建了一个位图(Bitmap)显示对象，然后设定其坐标。最后添加到显示列表中。</p>
+<h2 id="显示更多超级英雄"><a href="#显示更多超级英雄" class="headerlink" title="显示更多超级英雄"></a>显示更多超级英雄</h2><p>回到上面的代码中，接着我们再来几个超级英雄，为了让他们并列显示，我们给他们设置相同的Y坐标，并且设置X坐标比上一个增加100。紧接着上面的代码，添加另外三个英雄：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var captain:egret.Bitmap = new egret.Bitmap( RES.getRes(&quot;hero-02&quot;) );</div><div class="line">captain.x = 70;</div><div class="line">captain.y = 20;</div><div class="line">this.addChild( captain );</div><div class="line">var superman:egret.Bitmap = new egret.Bitmap( RES.getRes(&quot;hero-03&quot;) );</div><div class="line">superman.x = 170;</div><div class="line">superman.y = 20;</div><div class="line">this.addChild( superman );</div><div class="line">var hulk:egret.Bitmap = new egret.Bitmap( RES.getRes(&quot;hero-04&quot;) );</div><div class="line">hulk.x = 270;</div><div class="line">hulk.y = 20;</div><div class="line">this.addChild( hulk );</div></pre></td></tr></table></figure>
+<h2 id="显示深度控制"><a href="#显示深度控制" class="headerlink" title="显示深度控制"></a>显示深度控制</h2><p>1、显示深度</p>
+<p>然后，看他们站队的先后顺序，看起来蝙蝠侠个子比美国大兵低一点，也许让蝙蝠侠排在前边看起来更协调一些。 之前我们了解过Egret的显示结构设计，这是整体的不同级别之间来说的。 那么这里，我们进一步了解在某一个显示容器内的显示对象结构，可以称之为显示列表。这是由于处于同一显示容器的显示对象，是以类似列表的方式来管理的，每一个显示对象都有其索引，并且索引是从0开始的整数。显示列表索引通常称为显示深度。 我们的眼睛对着屏幕，显示列表中显示对象的索引顺序在从屏幕到眼睛方向就是从0开始，依次递增的。</p>
+<p>首先我们验证一下当前的显示深度，在createGameScene底部加入代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log( &quot;display indexes:&quot;, this.getChildIndex( bg ), this.getChildIndex( batman ),  this.getChildIndex( captain ), this.getChildIndex( superman ), this.getChildIndex( hulk ) );</div></pre></td></tr></table></figure></p>
+<p>我们称这段代码为索引log代码，后边还会用到。</p>
+<p>2、修改显示深度</p>
+<p>我们确认一下，现在蝙蝠侠的深度是1，队长的深度是2。 接下来，完成我们刚才计划的调换，我们获取蝙蝠侠的深度，并直接设置蝙蝠侠的深度为这个值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">this.setChildIndex( batman, this.getChildIndex( captain ) );</div></pre></td></tr></table></figure>
+<p>然后再复制一份深度log代码在这行后边。</p>
+<p>Cool!蝙蝠侠已经站到前边了。现在，再检查一下这两位超级英雄的深度如何变化：</p>
+<p>display indexes: 0 2 1 3 4</p>
+<p>蝙蝠侠的深度为之前队长的深度2，这点毋庸置疑。队长的深度由之前的2变为1，这里需要说明一下关于显示深度的规则：</p>
+<p>A. 某一个显示深度只能对应一个显示对象，一个显示对象也只能有一个显示深度。</p>
+<p>B. 显示深度总是从零开始连续的，当某个深度位置的显示对象被设置为其他深度时，原来的深度会自动被紧邻的比其深度值大1位置的显示对象占据，后续深度位置的显示对象会依次往前排。</p>
+<p>C. 某一容器内的显示列表的深度最大值是显示列表长度-1。</p>
+<p>可以理解每个深度位置是一个房间，这些房间从0开始依次编号。每个显示对象是一个人，显示列表维护总要确保每个人在一个自己的房间，并且这些房间之间没有空的，除非这些人都从0开始排满了前面的房间。</p>
+<p>3、交换显示深度<br>接下来，我们尝试让绿巨人也站到超人后边，就会形成前后两排的格局，这样也许会显得更整齐。</p>
+<p>除了像上边的代码直接占据现有已被显示对象占据的深度，我们还可以直接交换两个显示对象的深度。 在createGameScene底部继续加入代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">this.swapChildren( superman, hulk );</div></pre></td></tr></table></figure></p>
+<p>可以看到两位英雄深度已经完成互换：</p>
+<p>display indexes: 0 2 1 4 3</p>
+<p>4、不可逾越的显示深度最大值</p>
+<p>之前我们说明了显示深度规则，其中C说明了最大值。为了更深一步理解，我们可以给一个较大的深度值来验证一下。 队长的个头高，或许我们让队长排最前边会更显威风。我们给一个远超过最大值(5-1=4)的深度值20：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">this.setChildIndex( captain, 20 );</div></pre></td></tr></table></figure><br>这是个看起来更有战斗力的队形！</p>
+<p>会发现队长的深度并没有变成20，而是自动取允许的最大值4：</p>
+<p>display indexes: 0 1 4 3 2</p>
+<p>这是引擎自动处理的，也算是一种容错功能吧。</p>
+<p>深度控制是显示编程的一个重要概念，如果没有完全理解，请自己反复使用本节所使用的深度控制API来测试验证。</p>
+<h2 id="Tween动画效果"><a href="#Tween动画效果" class="headerlink" title="Tween动画效果"></a>Tween动画效果</h2><p>到目前为止，我们显示的内容都是静止的，是时候让我们来领略Egret强大的Tween动画控制功能了。所谓Tween动画，就是设计某种属性（比如位置、透明度和缩放）的两个不同状态，然后在给定的时间内从一个状态平滑过渡到另外一个状态。</p>
+<p>我们制造几个简单的位移和透明度动画来初步体验。</p>
+<h2 id="1、认识锚点"><a href="#1、认识锚点" class="headerlink" title="1、认识锚点"></a>1、认识锚点</h2><p>在继续动画之前，我们首先要清楚一个关于坐标定位的重要概念：锚点。 锚点用另一个易于理解的词来说，就是定位点。因此锚点是只存在于显示对象的概念。并且锚点是对显示对象自身设置的。</p>
+<p>由于是用于坐标定位，锚点自然地包含了两个部分：X方向锚点和Y方向锚点。 设置锚点有两种方式：坐标值锚点和比例锚点。</p>
+<p>坐标值锚点是从显示对象本身的左上角作为原点的，取值就是具体的像素值。 使用显示对象属性anchorOffsetX和anchorOffsetY来设置坐标值锚点。</p>
+<p>比如我们设置一个显示对象的锚点坐标为：X方向30像素，Y方向40像素，那么如图所示，锚点就在两个方向箭头所指的黑色圆点位置：<br>比例锚点，是以显示对象的宽度和高度为基准的比例，用1来代表原始宽度或高度，即100%。使用显示对象属性anchorX和anchorY来设置比例锚点。</p>
+<p>通常用比例锚点是非常方便的，因为不需要计算像素值。 回到我们的Tween功能示例中，我们计划让绿巨人变大变小。但显示对象默认的锚点位于左上角，所以我们用刚学到的锚点设置功能来修改锚点位置。</p>
+<p>我们希望绿巨人以脚底中心为锚点进行缩放，因此在X方向设置比例锚点为.5，以使锚点X方向位于绿巨人的中心，Y方向设置比例锚点为1，也就是绿巨人脚底的位置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hulk.anchorX = .5;</div><div class="line"></div><div class="line">hulk.anchorY = 1;</div></pre></td></tr></table></figure><br>设置锚点后，我们还需要根据锚点的偏移修改坐标值，以使绿巨人还保持原先的显示位置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hulk.x = hulk.x + hulk.width / 2; </div><div class="line">hulk.y = hulk.y + hulk.height;</div></pre></td></tr></table></figure><br>确保以上四行代码已经置于createGameScene最后。</p>
+<h2 id="设计并实现一组Tween动画"><a href="#设计并实现一组Tween动画" class="headerlink" title="设计并实现一组Tween动画"></a>设计并实现一组Tween动画</h2><p>接下来，我们继续用这些超级英雄来展示强大的Tween功能。我们从不同的方面设计三个Tween动画： 第一步，让蝙蝠侠和超人互换位置； 第二步，让队长进行透明度变化，变透明然后再恢复； 第三步，让绿巨人缩小再放大（目前已经够大，所以不能再大了）；</p>
+<p>操作方面为了便捷，我们设计为点击舞台，每次点击播放不同的动画。由于要分次显示不同的动画，我们用一个成员变量times来记录次数，在类内部建立该成员变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">private times:number;</div></pre></td></tr></table></figure><br>并设计为在每次点击时增加1，并取余3，使得我们在点击一轮三次动画后，后续的点击还可以从头再运行。</p>
+<p>这样关于点击次数控制的代码结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">this.times = -1;</div><div class="line">var self = this;</div><div class="line">this.stage.addEventListener( egret.TouchEvent.TOUCH_TAP, function()&#123; switch ( ++ self.times % 3 ) &#123; case 0: break; case 1: break; case 2: break; &#125; &#125;, this );</div></pre></td></tr></table></figure><br>接下，我们在switch-case的3种case中，分别完成三个Tween动画控制代码。 第一步，让两个超级英雄互换，直接设置目标X坐标为对方的当前X坐标即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">egret.Tween.get( batman ).to( &#123; x:superman.x &#125;, 300, egret.Ease.circIn );</div><div class="line">egret.Tween.get( superman ).to( &#123; x:batman.x &#125;, 300, egret.Ease.circIn );</div></pre></td></tr></table></figure></p>
+<p>由于这两个动画设计为同时进行，我们分别设置其Tween即可。</p>
+<p>这里先熟悉一下Tween的基本用法。 Tween.get内传入需要对其进行动画控制的对象，并返回一个Tween对象。然后可以设置Tween对象的动画，即调用to方法。 to方法包含三个参数。 首先是动画目标属性组，这个参数可以对目标对象本身的各项属性进行设定，就是动画结束时的状态，可以设定一个或多个属性。 第二个参数是动画时间，以毫秒计。 第三个参数是补间方程，即对动画区间内每个时间点的属性值设定分布。在egret.Ease已经提供了丰富的补间方程，可以根据自己的喜好选择。</p>
+<p>第二步，队长的透明度分为两个阶段，使用egret.Tween来实现这两个阶段时，直接在同一个语句中，用连续写法即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">egret.Tween.get( captain ).to( &#123; alpha:.3 &#125;, 300, egret.Ease.circIn ).to( &#123; alpha:1 &#125;, 300, egret.Ease.circIn );</div></pre></td></tr></table></figure>
+<p>之所以可以这样用，是由于Tween提供的方法均会返回Tween对象。 另外，这种连续写法将这些动画过程按照先后关系形成一个队列。运行过程中，前面的动画执行完毕后，依次立即执行后续的动画。直到队列执行完毕。 上面的代码将实现队长的透明度变为0.3，之后再恢复为1。</p>
+<p>第三步，该步动画同样分两个阶段，因此与第二步有些类似，用连续写法，依次写出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">egret.Tween.get( hulk ).to( &#123; scaleX:.4, scaleY:.4 &#125;, 500, egret.Ease.circIn ).to( &#123; scaleX:1, scaleY:1 &#125;, 500, egret.Ease.circIn );</div></pre></td></tr></table></figure><br>如代码所示，对尺寸放大缩小最便捷的方法就是设置X和Y方向的缩放因数。</p>
+<p>注意，以上三个步骤的代码分别写在之前switch-case的三个case中。</p>
+<h2 id="加入声音"><a href="#加入声音" class="headerlink" title="加入声音"></a>加入声音</h2><p>为了让我们能快速直观地学习Egret的用法，我们在前面的步骤都学习显示方面的内容。然而在游戏开发中，各种声音效果的配合也是非常重要的。</p>
+<h2 id="声音资源配置"><a href="#声音资源配置" class="headerlink" title="声音资源配置"></a>声音资源配置</h2><p>跟图片一样，声音也必须作为资源加载才可以播放。 首先我们要先将准备好的声音文件放入到assets文件夹。这里准备的文件为bonus.mp3。 在resource.json中加入声音的配置，为简明我们没有新创建组，直接添加到原来的组成为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> &#123; &quot;resources&quot;: [ &#123;&quot;name&quot;:&quot;hero-01&quot;,&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;assets/hero-01.png&quot;&#125;, &#123;&quot;name&quot;:&quot;hero-02&quot;,&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;assets/hero-02.png&quot;&#125;, &#123;&quot;name&quot;:&quot;hero-03&quot;,&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;assets/hero-03.png&quot;&#125;, &#123;&quot;name&quot;:&quot;hero-04&quot;,&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;assets/hero-04.png&quot;&#125;, &#123;&quot;name&quot;:&quot;bonus.mp3&quot;,&quot;type&quot;:&quot;sound&quot;,&quot;url&quot;:&quot;assets/bonus.mp3&quot;&#125; ],</div><div class="line">&quot;groups&quot;: [ &#123;&quot;name&quot;:&quot;heroes&quot;,&quot;keys&quot;:&quot;hero-01,hero-02,hero-03,hero-04,bonus.mp3&quot;&#125; ] &#125;</div></pre></td></tr></table></figure></p>
+<p>播放声音</p>
+<p>在程序中，就不需要做额外的处理，加入如下代码即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var sound:egret.Sound = RES.getRes( &quot;bonus.mp3&quot; ); sound.play();</div></pre></td></tr></table></figure>
+<p>为了方便测试，我们不直接播放。而是将这段代码加到队长渐变的部分,即case 1代码段中。 编译运行，将会在每次队长渐隐渐显动画播放时听到所加声音播放。</p>
+<h2 id="常规网络通讯"><a href="#常规网络通讯" class="headerlink" title="常规网络通讯"></a>常规网络通讯</h2><p>在游戏开发项目中，数据的通讯无疑是不可或缺的因素。</p>
+<p>本节，我们就来通过一个简单的实例来学习网络通讯的基本用法。</p>
+<p>1、URLRequest<br>URLRequest 类封装了进行HTTP请求所需要的所有信息。 常用的HTTP请求有GET/POST两种类型。当进行HTTP请求时，可以直接在URLRequest实例上设置请求类型和实际数据。</p>
+<p>HTTP请求首先需要URL，我们准备了一个专用于测试的URL，其返回当前浏览器的代理信息： <a href="http://httpbin.org/user-agent" target="_blank" rel="external">http://httpbin.org/user-agent</a></p>
+<p>使用URLRequest类，就要创建其实例，通常在构造函数中传入URL即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var urlreq:egret.URLRequest = new egret.URLRequest( &quot;http://httpbin.org/user-agent&quot; );</div></pre></td></tr></table></figure><br>2、URLLoader<br>URLRequest只是一个信息集合，实际通讯需要使用URLLoader。 URLLoader必须使用一个URLRequest实例来发挥作用，并且为了得到返回结果，需要加一个事件监听，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var urlloader:egret.URLLoader = new egret.URLLoader; urlloader.addEventListener( egret.Event.COMPLETE, function( evt:egret.Event ):void&#123;</div><div class="line">console.log(evt.target.data);</div><div class="line">&#125;, this );</div><div class="line">urlloader.load( urlreq );</div></pre></td></tr></table></figure><br>编译运行，没有错误的话，控制台将会输出类似的代理信息log：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;  &quot;user-agent&quot;: &quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36&quot; &#125;</div></pre></td></tr></table></figure>
+<p>github: <a href="https://github.com/yfjl/egret-demo" target="_blank" rel="external">https://github.com/yfjl/egret-demo</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Micity 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Micity 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/04/WebSocket有没有可能取代AJAX/" rel="next" title="WebSocket有没有可能取代AJAX?">
+                <i class="fa fa-chevron-left"></i> WebSocket有没有可能取代AJAX?
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507626458664&di=b436858cce2f58eafc289d8d248416cc&imgtype=0&src=http%3A%2F%2Fwww.qqzhi.com%2Fuploadpic%2F2014-09-16%2F053119768.jpg"
+                alt="Micity" />
+            
+              <p class="site-author-name" itemprop="name">Micity</p>
+              <p class="site-description motion-element" itemprop="description">每天就记点什么...</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yfjl" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/MicityYF/activities" target="_blank" title="知乎">
+                    
+                      <i class="fa fa-fw fa-globe"></i>知乎</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://cn.vuejs.org/" title="Vue" target="_blank">Vue</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.css88.com/doc/webpack2/guides/development/" title="Webpack" target="_blank">Webpack</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="Next" target="_blank">Next</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编写一个hello-World"><span class="nav-number">1.</span> <span class="nav-text">编写一个hello World</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清理项目"><span class="nav-number">2.</span> <span class="nav-text">清理项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Egret程序的入口"><span class="nav-number">3.</span> <span class="nav-text">Egret程序的入口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制一个单色背景"><span class="nav-number">4.</span> <span class="nav-text">绘制一个单色背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调整屏幕适配模式"><span class="nav-number">5.</span> <span class="nav-text">调整屏幕适配模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应用户操作"><span class="nav-number">6.</span> <span class="nav-text">响应用户操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源加载"><span class="nav-number">7.</span> <span class="nav-text">资源加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源加载清单"><span class="nav-number">8.</span> <span class="nav-text">资源加载清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在程序中加载资源"><span class="nav-number">9.</span> <span class="nav-text">在程序中加载资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载资源的代码分析"><span class="nav-number">10.</span> <span class="nav-text">加载资源的代码分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示图片"><span class="nav-number">11.</span> <span class="nav-text">显示图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示第一个超级英雄"><span class="nav-number">12.</span> <span class="nav-text">显示第一个超级英雄</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示更多超级英雄"><span class="nav-number">13.</span> <span class="nav-text">显示更多超级英雄</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示深度控制"><span class="nav-number">14.</span> <span class="nav-text">显示深度控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tween动画效果"><span class="nav-number">15.</span> <span class="nav-text">Tween动画效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1、认识锚点"><span class="nav-number">16.</span> <span class="nav-text">1、认识锚点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计并实现一组Tween动画"><span class="nav-number">17.</span> <span class="nav-text">设计并实现一组Tween动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加入声音"><span class="nav-number">18.</span> <span class="nav-text">加入声音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声音资源配置"><span class="nav-number">19.</span> <span class="nav-text">声音资源配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常规网络通讯"><span class="nav-number">20.</span> <span class="nav-text">常规网络通讯</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Micity</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/11/04/Egret小白快速上手（源码）/';
+          this.page.identifier = '2017/11/04/Egret小白快速上手（源码）/';
+          this.page.title = 'Egret小白快速上手（源码）';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.3"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("MQCWUHBVkhCY5OVfSoNURldH-gzGzoHsz", "T699xzbxAqCsmou5fsa6BcBj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: MQCWUHBVkhCY5OVfSoNURldH-gzGzoHsz,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
