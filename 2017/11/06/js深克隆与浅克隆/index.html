@@ -87,7 +87,7 @@
 <meta property="og:description" content="js克隆，听起来这么高大上的东西，其实几句话就可以讲清楚。所谓克隆，就是把一个对象里的东西一模一样的复制到另一个对象，并且这两个对象分别放在内存的不同地方。">
 <meta property="og:image" content="http://yoursite.com/images/2017-11-6-1.png">
 <meta property="og:image" content="http://yoursite.com/images/2017-11-6-2.png">
-<meta property="og:updated_time" content="2017-11-06T03:39:53.094Z">
+<meta property="og:updated_time" content="2017-11-06T03:41:09.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js深克隆与浅克隆">
 <meta name="twitter:description" content="js克隆，听起来这么高大上的东西，其实几句话就可以讲清楚。所谓克隆，就是把一个对象里的东西一模一样的复制到另一个对象，并且这两个对象分别放在内存的不同地方。">
@@ -387,7 +387,7 @@
 <p>封装一个克隆函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">   function extendCopy(obj)&#123;</div><div class="line">	var newObj = &#123;&#125;;</div><div class="line">	for(var i in obj)&#123;</div><div class="line">		newObj[i] = obj[i];</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return newObj;	</div><div class="line">&#125;</div><div class="line">   //克隆2个对象</div><div class="line">   var user1 = extendCopy(temp);</div><div class="line">user1.name = &quot;李四&quot;;</div><div class="line">user1.age = 22;</div><div class="line">user1.tag.push(&#123;</div><div class="line">	book:&quot;新书1&quot;,</div><div class="line">	pice:&quot;$102&quot;		</div><div class="line">&#125;);</div><div class="line">console.log(user1)</div><div class="line"></div><div class="line">var user2 = extendCopy(temp);</div><div class="line">user2.name = &quot;李四&quot;;</div><div class="line">user2.age = 22;</div><div class="line">user2.tag.push(&#123;</div><div class="line">	book:&quot;新书2&quot;,</div><div class="line">	pice:&quot;$111&quot;		</div><div class="line">&#125;);</div><div class="line">console.log(user2)</div></pre></td></tr></table></figure></p>
 <p>结果：<br><img src="/images/2017-11-6-1.png" alt=""></p>
 <p>从结果可以看出，两个数组的结果一样。<br>浅克隆就是简单的复制对象，如果有属性是引用类型，就会出现上面情况。<br>因为引用型变量保存的是内存地址，所以其实后来操作的都是同一块内存，导致了数组内容都一样。</p>
-<p>深克隆就是判断下是不是引用类型，如果是的话就递归一层一层的复制自己。<br>递归深度克隆代码如下：</p>
+<p>什么是深克隆?<br>深克隆就是判断下是不是引用类型，如果是的话就递归一层一层的复制自己。<br>递归深度克隆代码如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">function extendDeepCopy(obj,newObj)&#123;</div><div class="line"></div><div class="line">		var newObj = newObj || &#123;&#125;;</div><div class="line">		for(var i in obj)&#123;</div><div class="line">			if(typeof obj[i] == &apos;object&apos;)&#123;</div><div class="line">				</div><div class="line">				newObj[i] = (obj[i].constructor === Array)?[]:&#123;&#125;;</div><div class="line">				</div><div class="line">				extendDeepCopy(obj[i],newObj[i])</div><div class="line">				</div><div class="line">			&#125;</div><div class="line">			else&#123;</div><div class="line">				newObj[i] = obj[i];</div><div class="line">			&#125;</div><div class="line">			console.log(&quot;key:&quot; +i+ &quot;，value:&quot;+JSON.stringify(newObj[i]))</div><div class="line">			</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		return newObj;	</div><div class="line">	&#125;</div><div class="line"></div><div class="line">    var user1 = extendDeepCopy(temp);</div><div class="line">	user1.name = &quot;李四&quot;;</div><div class="line">	user1.age = 22;</div><div class="line">	user1.tag.push(&#123;</div><div class="line">		book:&quot;新书1&quot;,</div><div class="line">		pice:&quot;$102&quot;		</div><div class="line">	&#125;);</div><div class="line">	console.log(user1)</div><div class="line"></div><div class="line">	var user2 = extendDeepCopy(temp);</div><div class="line">	user2.name = &quot;李四&quot;;</div><div class="line">	user2.age = 22;</div><div class="line">	user2.tag.push(&#123;</div><div class="line">		book:&quot;新书2&quot;,</div><div class="line">		pice:&quot;$111&quot;		</div><div class="line">	&#125;);</div><div class="line">	console.log(user2)</div></pre></td></tr></table></figure>
 <p>结果如下：<br><img src="/images/2017-11-6-2.png" alt=""></p>
 <p>深克隆就是js继承的方法之一。</p>
@@ -465,6 +465,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/06/js高阶函数/" rel="prev" title="js高阶函数">
+                js高阶函数 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -555,7 +559,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
