@@ -289,6 +289,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/23/的新特性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micity">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507626458664&di=b436858cce2f58eafc289d8d248416cc&imgtype=0&src=http%3A%2F%2Fwww.qqzhi.com%2Fuploadpic%2F2014-09-16%2F053119768.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Micity's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/23/的新特性/" itemprop="url"><转>typescript 2.0 的新特性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-23T09:46:25+08:00">
+                2017-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/23/的新特性/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/23/的新特性/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/10/23/的新特性/" class="leancloud_visitors" data-flag-title="<转>typescript 2.0 的新特性">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="可识别空和未定义类型"><a href="#可识别空和未定义类型" class="headerlink" title="可识别空和未定义类型"></a>可识别空和未定义类型</h2><p>TypeScript 有两个特殊的类型，null 和 undefined，null 和 undefined 分别是它们的值。以前是不能显式使用这些类型的，但现在 null 和 undefined 不管在什么类型检查模式下都可以用作类型名称。</p>
+<p>以前的类型检查器认为 null 和 undefined 可以赋值给任意变量。实际上，null 和 undefined 对每一个类型都是有效的值，任何类型都不可能明确定义不包含它们（因此不可能检查到对它们的错误使用）。</p>
+<p>–strictNullChecks<br>–strictNullChecks 参数用于新的严格空检查模式。</p>
+<p>在严格空检查模式下， null 和 undefined 值都 不 属于任何一个类型，它们只能赋值给自己这种类型或者 any (有一个例外，undefined 也可以赋值给 void)。因此，在常规类型检查模式下 T 和 T | ndefined 被认为是等同的（因为 undefined 被看作 T 的子类型），但它们在严格类型检查模式下是不同的类型，只有 T | undefined 类型允许出现 undefined 值。T 和 T | null 也是这种情况。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/23/的新特性/#post.more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/23/typescript基本类型-下/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1596,155 +1745,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/vuex/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micity">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507626458664&di=b436858cce2f58eafc289d8d248416cc&imgtype=0&src=http%3A%2F%2Fwww.qqzhi.com%2Fuploadpic%2F2014-09-16%2F053119768.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Micity's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/10/vuex/" itemprop="url">一篇看懂vuejs的状态管理神器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T12:52:04+08:00">
-                2017-10-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/10/vuex/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/10/vuex/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/10/10/vuex/" class="leancloud_visitors" data-flag-title="一篇看懂vuejs的状态管理神器">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>关于vuex类的新闻最近很多，看到眼热就去查了下资料，然后扯出来一堆flux、redux、state、state之类的概念，以及大型工程必要性之类的。看官方手册也是昏昏然。<br>然而，我还是弄懂了!我准备从demo出发，以同样的一个最简单的demo，演示两种情况下的代码编写情况：</p>
-<ol>
-<li>单纯依赖于vue.js</li>
-<li>依赖vue.js，也使用了vuex技术
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/10/vuex/#post.more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1799,7 +1799,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
