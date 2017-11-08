@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="1、我们似乎一开始工作就听到了白盒与黑盒？是黑白无常吗？到底他妈的是什么？答：white-box testing（白盒测试） black-box testing（黑盒测试），没错，名称的由来很简单，直译老外的………………没办法谁让他们先进呢白盒：就是直接从程序的源代码里开始搞，其实主要是测试API，再细点说，就是测试public的方法（当然还有静态代码走查啥的，也得算到这里头，还有语句覆盖（就是代">
+<meta name="description" content="ECAMScript 3给 Function的原型定义了两个方法，它们是 Function.prototype.call和 Function.prototype.apply。在实际开发中，特别是在一些函数式风格的代码编写中， call 和 apply 方法尤为有用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="白盒与黑盒到底什么？">
-<meta property="og:url" content="http://yoursite.com/2017/10/31/白盒与黑盒到底什么？/index.html">
+<meta property="og:title" content="js中call方法解析">
+<meta property="og:url" content="http://yoursite.com/2017/11/07/js中call方法解析/index.html">
 <meta property="og:site_name" content="Micity&#39;s Notes">
-<meta property="og:description" content="1、我们似乎一开始工作就听到了白盒与黑盒？是黑白无常吗？到底他妈的是什么？答：white-box testing（白盒测试） black-box testing（黑盒测试），没错，名称的由来很简单，直译老外的………………没办法谁让他们先进呢白盒：就是直接从程序的源代码里开始搞，其实主要是测试API，再细点说，就是测试public的方法（当然还有静态代码走查啥的，也得算到这里头，还有语句覆盖（就是代">
-<meta property="og:updated_time" content="2017-10-31T05:34:58.734Z">
+<meta property="og:description" content="ECAMScript 3给 Function的原型定义了两个方法，它们是 Function.prototype.call和 Function.prototype.apply。在实际开发中，特别是在一些函数式风格的代码编写中， call 和 apply 方法尤为有用。">
+<meta property="og:updated_time" content="2017-11-07T06:02:55.467Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="白盒与黑盒到底什么？">
-<meta name="twitter:description" content="1、我们似乎一开始工作就听到了白盒与黑盒？是黑白无常吗？到底他妈的是什么？答：white-box testing（白盒测试） black-box testing（黑盒测试），没错，名称的由来很简单，直译老外的………………没办法谁让他们先进呢白盒：就是直接从程序的源代码里开始搞，其实主要是测试API，再细点说，就是测试public的方法（当然还有静态代码走查啥的，也得算到这里头，还有语句覆盖（就是代">
+<meta name="twitter:title" content="js中call方法解析">
+<meta name="twitter:description" content="ECAMScript 3给 Function的原型定义了两个方法，它们是 Function.prototype.call和 Function.prototype.apply。在实际开发中，特别是在一些函数式风格的代码编写中， call 和 apply 方法尤为有用。">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/31/白盒与黑盒到底什么？/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/07/js中call方法解析/"/>
 
 
 
 
 
-  <title>白盒与黑盒到底什么？ | Micity's Notes</title>
+  <title>js中call方法解析 | Micity's Notes</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/白盒与黑盒到底什么？/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/07/js中call方法解析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micity">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">白盒与黑盒到底什么？</h1>
+          <h1 class="post-title" itemprop="name headline">js中call方法解析</h1>
         
 
         <div class="post-meta">
@@ -318,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-31T13:33:52+08:00">
-                2017-10-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T13:09:13+08:00">
+                2017-11-07
               </time>
             
 
@@ -337,9 +337,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/31/白盒与黑盒到底什么？/#comments" itemprop="discussionUrl">
+                <a href="/2017/11/07/js中call方法解析/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/31/白盒与黑盒到底什么？/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/11/07/js中call方法解析/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -347,7 +347,7 @@
 
           
           
-             <span id="/2017/10/31/白盒与黑盒到底什么？/" class="leancloud_visitors" data-flag-title="白盒与黑盒到底什么？">
+             <span id="/2017/11/07/js中call方法解析/" class="leancloud_visitors" data-flag-title="js中call方法解析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -378,10 +378,13 @@
       
 
       
-        <p>1、我们似乎一开始工作就听到了白盒与黑盒？是黑白无常吗？到底他妈的是什么？<br>答：white-box testing（白盒测试） black-box testing（黑盒测试），没错，名称的由来很简单，直译老外的………………没办法谁让他们先进呢<br>白盒：就是直接从程序的源代码里开始搞，其实主要是测试API，再细点说，就是测试public的方法（当然还有静态代码走查啥的，也得算到这里头，还有语句覆盖（就是代码有没有得到执行））<br>黑盒：那就直接通过运行程序，开始搞呗，直接使用应用，看不到源代码，也就是我们常说的功能测试了……<br>总结：测试行为根据不同的角度，有非常多的分类，可见白盒与黑盒是根据是否能看见源代码为依据的。<br><a id="more"></a></p>
-<h2 id="2、细说黑盒"><a href="#2、细说黑盒" class="headerlink" title="2、细说黑盒"></a>2、细说黑盒</h2><p>答：网上一搜黑盒测试，好家伙，立马就有分类了，黑盒包括功能测试与性能测试<br>功能测试又细分：逻辑测试、ui测试、易用性测试、兼容性测试<br>性能测试又细分：空间测试、时间测试<br>功能测试细分内容白话解释<br>逻辑测试：说白了就是人机交互事件测试，例如app里，你点击按钮啦什么的<br>ui测试：就是你眼睛看到的和设计稿是否一致<br>易用性测试：那就更简单了，就是用户体验，你用的爽不爽<br>兼容性测试：操作系统可以运行在不同的硬件，like Android运行在很多不同的手机上，你要把你的app在每一个操作系统上遍历一遍<br>空间测试：所谓空间，是你的app占用操作系统多少资源<br>时间测试：你的app占用了操作系统资源，最直接影响的就是启动时间、加载时间，你用直观的眼睛看到！</p>
-<h2 id="3、再议白盒"><a href="#3、再议白盒" class="headerlink" title="3、再议白盒"></a>3、再议白盒</h2><p>答：包含有：<br>静态代码走查（当然人工看起来就得累死，必须有框架啊）<br>代码覆盖率（就是每一条语句有没有得到执行，有的开发哥哥，写的判断，其实有的语句一辈子都执行不到，还有一些像废弃的一些方法）<br>逻辑功能走查（通常情况下是直接调用public 的方法）<br>三个都是白盒测试常用的一些测试内容</p>
-<h2 id="4、最后总结"><a href="#4、最后总结" class="headerlink" title="4、最后总结"></a>4、最后总结</h2><p>白盒：从代码里做，实例方法，就拿到实例对象调用，静态方法，就拿到类调用。可做public，也可做private，总之想做就可以做，单元测试，就是白盒测试的一种……<br>黑盒：就是功能测试、手工测试，人肉测试………………………………</p>
+        <p>ECAMScript 3给 Function的原型定义了两个方法，它们是 Function.prototype.call和 Function.prototype.apply。<br>在实际开发中，特别是在一些函数式风格的代码编写中， call 和 apply 方法尤为有用。<br><a id="more"></a></p>
+<p>call方法：调用一个对象的一个方法，以另一个对象替换当前对象。<br>call方法的两个作用：<br>1、改变this指向<br>2、继承（借用其他对象的方法）</p>
+<p>call(thisArgs [,args…])<br>hisArgs的取值有以下4种情况：<br>（1） 不传，或者传null,undefined， 函数中的this指向window对象<br>（2） 传递另一个函数的函数名，函数中的this指向这个函数的引用<br>（3） 传递字符串、数值或布尔类型等基础类型，函数中的this指向其对应的包装对象，如 String、Number、Boolean<br>（4） 传递一个对象，函数中的this指向这个对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function a()&#123;</div><div class="line">    console.log(this); //输出函数a中的this对象</div><div class="line">&#125;</div><div class="line">function b()&#123;&#125; //定义函数b</div><div class="line"> </div><div class="line">var obj = &#123;name:&apos;onepixel&apos;&#125;; //定义对象obj</div><div class="line"> </div><div class="line">a.call(); //window</div><div class="line">a.call(null); //window</div><div class="line">a.call(undefined);//window</div><div class="line">a.call(1); //Number</div><div class="line">a.call(&apos;&apos;); //String</div><div class="line">a.call(true); //Boolean</div><div class="line">a.call(b);// function b()&#123;&#125;</div><div class="line">a.call(obj); //&#123;name:&apos;onepixel&apos;&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<h2 id="1、改变this指向"><a href="#1、改变this指向" class="headerlink" title="1、改变this指向"></a>1、改变this指向</h2><p>var obj1 = {<br>name: ‘sven’<br>};<br>var obj2 = {<br>name: ‘anne’<br>};<br>window.name = ‘window’;<br>var getName = function(){<br>alert ( this.name );<br>};<br>getName(); // 输出: window<br>getName.call( obj1 ); // 输出: sven<br>getName.call( obj2 ); // 输出: anne</p>
+<h2 id="2、继承（借用其他对象的方法）"><a href="#2、继承（借用其他对象的方法）" class="headerlink" title="2、继承（借用其他对象的方法）"></a>2、继承（借用其他对象的方法）</h2><p>var a = [1,2];<br>Array.prototype.push.call( a, ‘first’ );<br>console.log(a)   //[1, 2, “first”]</p>
+<h2 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var scope = &quot;global&quot;;</div><div class="line">    function log()&#123;</div><div class="line">        var args = Array.prototype.join.call(arguments, &quot;, &quot;);</div><div class="line">        console.log(this.scope + &apos;:&apos; + args);</div><div class="line">    &#125;</div><div class="line">    var dog = &#123;</div><div class="line">        scope:&apos;dog&apos;,</div><div class="line">        yelp: function()&#123;</div><div class="line">            var scope = &apos;dog.yelp&apos;;</div><div class="line">            log(&apos;wow&apos;);</div><div class="line">        &#125;</div><div class="line">    &#125;        </div><div class="line">    dog.yelp(); //global:wow</div><div class="line">    dog.yelp.call(dog); //global:wow</div><div class="line">    log.call(dog, &apos;created&apos;); //dog:created</div><div class="line"></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -447,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/30/Inquirer-js/" rel="next" title="nodejs交互式命令行工具 Inquirer.js">
-                <i class="fa fa-chevron-left"></i> nodejs交互式命令行工具 Inquirer.js
+              <a href="/2017/11/06/js高阶函数/" rel="next" title="js高阶函数">
+                <i class="fa fa-chevron-left"></i> js高阶函数
               </a>
             
           </div>
@@ -457,8 +460,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/31/loader编写到发布/" rel="prev" title="webpack loader编写到发布">
-                webpack loader编写到发布 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/08/浅谈js自定义事件/" rel="prev" title="浅谈js自定义事件">
+                浅谈js自定义事件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -625,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2、细说黑盒"><span class="nav-number">1.</span> <span class="nav-text">2、细说黑盒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、再议白盒"><span class="nav-number">2.</span> <span class="nav-text">3、再议白盒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、最后总结"><span class="nav-number">3.</span> <span class="nav-text">4、最后总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、改变this指向"><span class="nav-number">1.</span> <span class="nav-text">1、改变this指向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、继承（借用其他对象的方法）"><span class="nav-number">2.</span> <span class="nav-text">2、继承（借用其他对象的方法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子："><span class="nav-number">3.</span> <span class="nav-text">例子：</span></a></li></ol></div>
             
 
           </div>
@@ -788,9 +791,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/10/31/白盒与黑盒到底什么？/';
-          this.page.identifier = '2017/10/31/白盒与黑盒到底什么？/';
-          this.page.title = '白盒与黑盒到底什么？';
+          this.page.url = 'http://yoursite.com/2017/11/07/js中call方法解析/';
+          this.page.identifier = '2017/11/07/js中call方法解析/';
+          this.page.title = 'js中call方法解析';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
