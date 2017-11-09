@@ -79,16 +79,19 @@
 
 
 
-<meta name="description" content="Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面 它是非常容易去处理以下几种事情的： 提供错误回调询问操作者问题获取并解析用户输入检测用户回答是否合法管理多层级的提示note: Inquirer.js仅仅给用户提供了一个漂亮的界面和提出问题流的方式。假如说你正在寻找的是完全成熟的命令行调试程序，那么我推荐你去看看commander， vorpal，args。 安装">
+<meta name="description" content="Electron 是一款可以利用 Web 技术 开发跨平台桌面应用的框架，最初是 Github 发布的 Atom 编辑器衍生出的 Atom Shell，后更名为 Electron 。Electron 提供了一个能通过 JavaScript 和 HTML 创建桌面应用的平台，同时集成 Node 来授予网页访问底层系统的权限。目前常见的有 NW、heX、Electron，可以打造桌面应用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodejs交互式命令行工具 Inquirer.js">
-<meta property="og:url" content="http://yoursite.com/2017/10/30/Inquirer-js/index.html">
+<meta property="og:title" content="electron快速入门">
+<meta property="og:url" content="http://yoursite.com/2017/11/09/electron快速入门/index.html">
 <meta property="og:site_name" content="Micity&#39;s Notes">
-<meta property="og:description" content="Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面 它是非常容易去处理以下几种事情的： 提供错误回调询问操作者问题获取并解析用户输入检测用户回答是否合法管理多层级的提示note: Inquirer.js仅仅给用户提供了一个漂亮的界面和提出问题流的方式。假如说你正在寻找的是完全成熟的命令行调试程序，那么我推荐你去看看commander， vorpal，args。 安装">
-<meta property="og:updated_time" content="2017-10-31T06:15:39.803Z">
+<meta property="og:description" content="Electron 是一款可以利用 Web 技术 开发跨平台桌面应用的框架，最初是 Github 发布的 Atom 编辑器衍生出的 Atom Shell，后更名为 Electron 。Electron 提供了一个能通过 JavaScript 和 HTML 创建桌面应用的平台，同时集成 Node 来授予网页访问底层系统的权限。目前常见的有 NW、heX、Electron，可以打造桌面应用。">
+<meta property="og:image" content="http://yoursite.com/2017/11/09/electron快速入门/images/2017-11-9-1.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/09/electron快速入门/images/2017-11-9-2.png">
+<meta property="og:updated_time" content="2017-11-09T07:19:34.138Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs交互式命令行工具 Inquirer.js">
-<meta name="twitter:description" content="Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面 它是非常容易去处理以下几种事情的： 提供错误回调询问操作者问题获取并解析用户输入检测用户回答是否合法管理多层级的提示note: Inquirer.js仅仅给用户提供了一个漂亮的界面和提出问题流的方式。假如说你正在寻找的是完全成熟的命令行调试程序，那么我推荐你去看看commander， vorpal，args。 安装">
+<meta name="twitter:title" content="electron快速入门">
+<meta name="twitter:description" content="Electron 是一款可以利用 Web 技术 开发跨平台桌面应用的框架，最初是 Github 发布的 Atom 编辑器衍生出的 Atom Shell，后更名为 Electron 。Electron 提供了一个能通过 JavaScript 和 HTML 创建桌面应用的平台，同时集成 Node 来授予网页访问底层系统的权限。目前常见的有 NW、heX、Electron，可以打造桌面应用。">
+<meta name="twitter:image" content="http://yoursite.com/2017/11/09/electron快速入门/images/2017-11-9-1.png">
 
 
 
@@ -118,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/30/Inquirer-js/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/09/electron快速入门/"/>
 
 
 
 
 
-  <title>nodejs交互式命令行工具 Inquirer.js | Micity's Notes</title>
+  <title>electron快速入门 | Micity's Notes</title>
   
 
 
@@ -289,7 +292,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/30/Inquirer-js/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/09/electron快速入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micity">
@@ -306,7 +309,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">nodejs交互式命令行工具 Inquirer.js</h1>
+          <h1 class="post-title" itemprop="name headline">electron快速入门</h1>
         
 
         <div class="post-meta">
@@ -318,8 +321,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-30T15:57:21+08:00">
-                2017-10-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-09T14:29:48+08:00">
+                2017-11-09
               </time>
             
 
@@ -337,9 +340,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/30/Inquirer-js/#comments" itemprop="discussionUrl">
+                <a href="/2017/11/09/electron快速入门/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/30/Inquirer-js/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/11/09/electron快速入门/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -347,7 +350,7 @@
 
           
           
-             <span id="/2017/10/30/Inquirer-js/" class="leancloud_visitors" data-flag-title="nodejs交互式命令行工具 Inquirer.js">
+             <span id="/2017/11/09/electron快速入门/" class="leancloud_visitors" data-flag-title="electron快速入门">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -378,33 +381,21 @@
       
 
       
-        <p>Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面</p>
-<p>它是非常容易去处理以下几种事情的：</p>
-<p>提供错误回调<br>询问操作者问题<br>获取并解析用户输入<br>检测用户回答是否合法<br>管理多层级的提示<br>note: Inquirer.js仅仅给用户提供了一个漂亮的界面和提出问题流的方式。假如说你正在寻找的是完全成熟的命令行调试程序，那么我推荐你去看看commander， vorpal，args。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install inquirer</div></pre></td></tr></table></figure>
-<p>编写一个小demo——index.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var inquirer = require(&apos;inquirer&apos;)</div><div class="line">inquirer.prompt([</div><div class="line">  &#123;</div><div class="line">    type: &apos;confirm&apos;,</div><div class="line">    name: &apos;test&apos;,</div><div class="line">    message: &apos;Are you handsome?&apos;,</div><div class="line">    default: true</div><div class="line">  &#125;</div><div class="line">]).then((answers) =&gt; &#123;</div><div class="line">  console.log(&apos;结果为:&apos;)</div><div class="line">  console.log(answers)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>运行一波</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node index.js</div></pre></td></tr></table></figure>
-<p>输出</p>
-<p>结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: false</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>从这个小demo可以看出来，通过Inquirer的prompt方法就可以在命令行中对用户提出问题。</p>
-<h2 id="Questions-——-问题"><a href="#Questions-——-问题" class="headerlink" title="Questions —— 问题"></a>Questions —— 问题</h2><p>问题的标题和默认结果值都是可以预设的。而在回答完成后会返回一个Promise对象，在其then方法中可以获取到用户输入的所有回答。其中传递给prompt方法的参数为一个question问题数组，数组中的每个元素都是一个问题对象。其包含的属性共有以下几种：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  type: String, // 表示提问的类型，下文会单独解释</div><div class="line">  name: String, // 在最后获取到的answers回答对象中，作为当前这个问题的键</div><div class="line">  message: String|Function, // 打印出来的问题标题，如果为函数的话</div><div class="line">  default: String|Number|Array|Function, // 用户不输入回答时，问题的默认值。或者使用函数来return一个默认值。假如为函数时，函数第一个参数为当前问题的输入答案。</div><div class="line">  choices: Array|Function, // 给出一个选择的列表，假如是一个函数的话，第一个参数为当前问题的输入答案。为数组时，数组的每个元素可以为基本类型中的值。</div><div class="line">  validate: Function, // 接受用户输入，并且当值合法时，函数返回true。当函数返回false时，一个默认的错误信息会被提供给用户。</div><div class="line">  filter: Function, // 接受用户输入并且将值转化后返回填充入最后的answers对象内。</div><div class="line">  when: Function|Boolean, // 接受当前用户输入的answers对象，并且通过返回true或者false来决定是否当前的问题应该去问。也可以是简单类型的值。</div><div class="line">  pageSize: Number, // 改变渲染list,rawlist,expand或者checkbox时的行数的长度。</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>其中，default, choices, validate, filter, when等函数都能被异步调用。同时返回一个promise或者通过使用this.async()函数来进行回调获取最终值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  /* 首选使用 promise */</div><div class="line">  filter: function () &#123;</div><div class="line">    return new Promise(/* etc... */);</div><div class="line">  &#125;,</div><div class="line"> </div><div class="line">  /* 也可以使用 this.async */</div><div class="line">  validate: function (input) &#123;</div><div class="line">    // Declare function as asynchronous, and save the done callback </div><div class="line">    var done = this.async();</div><div class="line"> </div><div class="line">    // 进行异步操作</div><div class="line">    setTimeout(function () &#123;</div><div class="line">      if (typeof input !== &apos;number&apos;) &#123;</div><div class="line">        // Pass the return value in the done callback </div><div class="line">        done(&apos;You need to provide a number&apos;);</div><div class="line">        return;</div><div class="line">      &#125;</div><div class="line">      // Pass the return value in the done callback </div><div class="line">      done(null, true);</div><div class="line">    &#125;, 3000);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
-<h2 id="Answers-——-回答"><a href="#Answers-——-回答" class="headerlink" title="Answers —— 回答"></a>Answers —— 回答</h2><p>Answers是一个包含有用户客户端输入的每一个问题的答案的对象<br>键：问题对象的name属性<br>值：取决于问题的类型，confirm类型为Boolean，Input类型为用户输入的字符串，rawlist和list类型为选中的值，也为字符串类型。</p>
-<h2 id="Separator-——-分隔"><a href="#Separator-——-分隔" class="headerlink" title="Separator —— 分隔"></a>Separator —— 分隔</h2><p>可以为任意的choices数组选项添加分隔，方便在多选项时划分选项类别</p>
-<h2 id="Prompt-types-——-问题类型"><a href="#Prompt-types-——-问题类型" class="headerlink" title="Prompt types —— 问题类型"></a>Prompt types —— 问题类型</h2><p>List<br>{type: ‘list’}<br>问题对象中必须有type,name,message,choices等属性，同时，default选项必须为默认值在choices数组中的位置索引(Boolean)</p>
-<p>Raw list<br>{type: ‘rawlist’}<br>与List类型类似，不同在于，list打印出来为无序列表，而rawlist打印为有序列表</p>
-<p>Expand<br>{type: ‘expand’}<br>同样是生成列表，但是在choices属性中需要增加一个属性：key，这个属性用于快速选择问题的答案。类似于alias或者shorthand的东西。同时这个属性值必须为一个小写字母</p>
-<p>Checkbox<br>{type: ‘checkbox’}<br>其余诸项与list类似，主要区别在于，是以一个checkbox的形式进行选择。同时在choices数组中，带有checked: true属性的选项为默认值。</p>
-<p>Confirm<br>{type: ‘confirm’}<br>提问，回答为Y/N。若有default属性，则属性值应为Boolean类型</p>
-<p>Input<br>{type: ‘input’}<br>获取用户输入字符串</p>
-<p>Password<br>{type: ‘password’}<br>与input类型类似，只是用户输入在命令行中呈现为XXXX</p>
-<p>Editor<br>{type: ‘editor’}<br>终端打开用户默认编辑器，如vim，notepad。并将用户输入的文本传回</p>
-<h2 id="支持"><a href="#支持" class="headerlink" title="支持"></a>支持</h2><p>下列所有CLI都有非常良好的支持程度。</p>
-<p>Mac OS<br>Terminal.app<br>iTerm<br>Windows:<br>ConEmu<br>cmd.exe<br>Powershell<br>Cygwin<br>Linux (Ubuntu, openSUSE, Arch Linux, etc):<br>gnome-terminal (Terminal GNOME)<br>konsole</p>
+        <p>Electron 是一款可以利用 Web 技术 开发跨平台桌面应用的框架，最初是 Github 发布的 Atom 编辑器衍生出的 Atom Shell，后更名为 Electron 。<br>Electron 提供了一个能通过 JavaScript 和 HTML 创建桌面应用的平台，同时集成 Node 来授予网页访问底层系统的权限。目前常见的有 NW、heX、Electron，可以打造桌面应用。<br><a id="more"></a></p>
+<h2 id="如何快速搭建Electron开发环境？"><a href="#如何快速搭建Electron开发环境？" class="headerlink" title="如何快速搭建Electron开发环境？"></a>如何快速搭建Electron开发环境？</h2><p>electron官方提供了一个名为“electron-quick-start”的示例项目，地址为：<a href="https://github.com/electron/electron-quick-start" target="_blank" rel="external">https://github.com/electron/electron-quick-start</a></p>
+<p>克隆下来作为模板<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/electron/electron-quick-start</div></pre></td></tr></table></figure><br>安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install </div></pre></td></tr></table></figure><br>换成淘宝镜像：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</div></pre></td></tr></table></figure></p>
+<p>安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm install</div></pre></td></tr></table></figure></p>
+<p>启动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm start</div></pre></td></tr></table></figure></p>
+<p>效果：<br><img src="./images/2017-11-9-1.png" alt=""></p>
+<p>使用ctrl+r  可以手动刷新</p>
+<h2 id="electron如何开发"><a href="#electron如何开发" class="headerlink" title="electron如何开发"></a>electron如何开发</h2><p>index.html：是打开的窗口加载的页面。<br>renderer.js：放业务相关JS的，和网页JS的区别在于，这里的JS不仅可以访问DOM，还能使用Node.js所有的API。<br>main.js：是electron应用的入口文件。主要用户启动electron的界面。可以通过以下代码来启动electron界面。</p>
+<p>main.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">const electron = require(&apos;electron&apos;)</div><div class="line"></div><div class="line">const app = electron.app</div><div class="line"></div><div class="line">const BrowserWindow = electron.BrowserWindow</div><div class="line"></div><div class="line">const path = require(&apos;path&apos;)</div><div class="line">const url = require(&apos;url&apos;)</div><div class="line"></div><div class="line"></div><div class="line">let mainWindow</div><div class="line"></div><div class="line">function createWindow () &#123;</div><div class="line">  // 创建窗口</div><div class="line">  mainWindow = new BrowserWindow(&#123;width: 800, height: 600&#125;)</div><div class="line">  //加载页面</div><div class="line">  mainWindow.loadURL(url.format(&#123;</div><div class="line">    pathname: path.join(__dirname, &apos;index.html&apos;),</div><div class="line">    protocol: &apos;file:&apos;,</div><div class="line">    slashes: true</div><div class="line">  &#125;))</div><div class="line"></div><div class="line">  // 打开窗口的调试工具</div><div class="line">  mainWindow.webContents.openDevTools()</div><div class="line"></div><div class="line">  // 窗口关闭的监听</div><div class="line">  mainWindow.on(&apos;closed&apos;, function () &#123;</div><div class="line">    mainWindow = null</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">app.on(&apos;ready&apos;, createWindow)</div><div class="line"></div><div class="line"></div><div class="line">app.on(&apos;window-all-closed&apos;, function () &#123;</div><div class="line">  if (process.platform !== &apos;darwin&apos;) &#123;</div><div class="line">    app.quit()</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.on(&apos;activate&apos;, function () &#123;</div><div class="line">  if (mainWindow === null) &#123;</div><div class="line">    createWindow()</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div></pre></td></tr></table></figure></p>
+<h2 id="electron-如何调试？"><a href="#electron-如何调试？" class="headerlink" title="electron 如何调试？"></a>electron 如何调试？</h2><p>在main.js ，把 mainWindow.webContents.openDevTools() 注释去掉<br><img src="./images/2017-11-9-2.png" alt=""></p>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>electron除了使用前端技术实现界面展示的功能外，还提供了大量的桌面环境接口。比如支持Notification，Jump List, dock menu等。具体支持哪些桌面接口以及如何使用 参考中文教程：<a href="https://electron.org.cn/doc/index.html" target="_blank" rel="external">https://electron.org.cn/doc/index.html</a></p>
+<h2 id="electron如何发布应用"><a href="#electron如何发布应用" class="headerlink" title="electron如何发布应用"></a>electron如何发布应用</h2><p>全局安装electron-packager，专门打包工具<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install electron-packager -g</div></pre></td></tr></table></figure></p>
+<p>执行打包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">electron-packager . mitt --out ../electron</div></pre></td></tr></table></figure></p>
+<p>当前文件目录下的资源（.）命名为mitt打包到父级的electron文件夹</p>
+<p>注意：打包第三方npm模块时，安装依赖的时候不要–save-dev。<br>    打包好的文件在resources/app 文件夹下。直接修改该文件夹下的代码即可进行更新。</p>
 
       
     </div>
@@ -470,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/30/常用工具包/" rel="next" title="vue-cli常用工具包">
-                <i class="fa fa-chevron-left"></i> vue-cli常用工具包
+              <a href="/2017/11/09/2017你跟上大前端发展趋势了吗？/" rel="next" title="2017你跟上大前端发展趋势了吗？">
+                <i class="fa fa-chevron-left"></i> 2017你跟上大前端发展趋势了吗？
               </a>
             
           </div>
@@ -479,10 +470,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/31/白盒与黑盒到底什么？/" rel="prev" title="白盒与黑盒到底什么？">
-                白盒与黑盒到底什么？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -648,7 +635,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions-——-问题"><span class="nav-number">2.</span> <span class="nav-text">Questions —— 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Answers-——-回答"><span class="nav-number">3.</span> <span class="nav-text">Answers —— 回答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Separator-——-分隔"><span class="nav-number">4.</span> <span class="nav-text">Separator —— 分隔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prompt-types-——-问题类型"><span class="nav-number">5.</span> <span class="nav-text">Prompt types —— 问题类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#支持"><span class="nav-number">6.</span> <span class="nav-text">支持</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何快速搭建Electron开发环境？"><span class="nav-number">1.</span> <span class="nav-text">如何快速搭建Electron开发环境？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#electron如何开发"><span class="nav-number">2.</span> <span class="nav-text">electron如何开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#electron-如何调试？"><span class="nav-number">3.</span> <span class="nav-text">electron 如何调试？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展"><span class="nav-number">4.</span> <span class="nav-text">扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#electron如何发布应用"><span class="nav-number">5.</span> <span class="nav-text">electron如何发布应用</span></a></li></ol></div>
             
 
           </div>
@@ -811,9 +798,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/10/30/Inquirer-js/';
-          this.page.identifier = '2017/10/30/Inquirer-js/';
-          this.page.title = 'nodejs交互式命令行工具 Inquirer.js';
+          this.page.url = 'http://yoursite.com/2017/11/09/electron快速入门/';
+          this.page.identifier = '2017/11/09/electron快速入门/';
+          this.page.title = 'electron快速入门';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
