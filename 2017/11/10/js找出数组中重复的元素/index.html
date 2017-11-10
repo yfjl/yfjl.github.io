@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="接口是TypeScript中非常实用的东西，这里我们看一下如何使用接口（Interface），主要的内容为：。初见接口。可选属性。函数类型。数组类型。类类型。接口继承和混合类型">
+<meta name="description" content="题目描述：找出数组arr中重复出现过的元素 function duplicates(arr) { }输入：[1, 2, 4, 4, 3, 3, 1, 5, 3]输出：[1, 3, 4]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="typeScript接口">
-<meta property="og:url" content="http://yoursite.com/2017/10/24/typeScript接口/index.html">
+<meta property="og:title" content="js找出数组中重复的元素">
+<meta property="og:url" content="http://yoursite.com/2017/11/10/js找出数组中重复的元素/index.html">
 <meta property="og:site_name" content="Micity&#39;s Notes">
-<meta property="og:description" content="接口是TypeScript中非常实用的东西，这里我们看一下如何使用接口（Interface），主要的内容为：。初见接口。可选属性。函数类型。数组类型。类类型。接口继承和混合类型">
-<meta property="og:updated_time" content="2017-10-24T09:08:56.086Z">
+<meta property="og:description" content="题目描述：找出数组arr中重复出现过的元素 function duplicates(arr) { }输入：[1, 2, 4, 4, 3, 3, 1, 5, 3]输出：[1, 3, 4]">
+<meta property="og:updated_time" content="2017-11-10T08:47:42.998Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="typeScript接口">
-<meta name="twitter:description" content="接口是TypeScript中非常实用的东西，这里我们看一下如何使用接口（Interface），主要的内容为：。初见接口。可选属性。函数类型。数组类型。类类型。接口继承和混合类型">
+<meta name="twitter:title" content="js找出数组中重复的元素">
+<meta name="twitter:description" content="题目描述：找出数组arr中重复出现过的元素 function duplicates(arr) { }输入：[1, 2, 4, 4, 3, 3, 1, 5, 3]输出：[1, 3, 4]">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/24/typeScript接口/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/10/js找出数组中重复的元素/"/>
 
 
 
 
 
-  <title>typeScript接口 | Micity's Notes</title>
+  <title>js找出数组中重复的元素 | Micity's Notes</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/24/typeScript接口/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/10/js找出数组中重复的元素/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micity">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">typeScript接口</h1>
+          <h1 class="post-title" itemprop="name headline">js找出数组中重复的元素</h1>
         
 
         <div class="post-meta">
@@ -318,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T08:57:49+08:00">
-                2017-10-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-10T16:29:45+08:00">
+                2017-11-10
               </time>
             
 
@@ -337,9 +337,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/24/typeScript接口/#comments" itemprop="discussionUrl">
+                <a href="/2017/11/10/js找出数组中重复的元素/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/24/typeScript接口/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/11/10/js找出数组中重复的元素/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -347,7 +347,7 @@
 
           
           
-             <span id="/2017/10/24/typeScript接口/" class="leancloud_visitors" data-flag-title="typeScript接口">
+             <span id="/2017/11/10/js找出数组中重复的元素/" class="leancloud_visitors" data-flag-title="js找出数组中重复的元素">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -378,17 +378,16 @@
       
 
       
-        <p>接口是TypeScript中非常实用的东西，这里我们看一下如何使用接口（Interface），主要的内容为：<br>。初见接口<br>。可选属性<br>。函数类型<br>。数组类型<br>。类类型<br>。接口继承和混合类型<br><a id="more"></a></p>
-<h2 id="初见接口"><a href="#初见接口" class="headerlink" title="初见接口"></a>初见接口</h2><p>我们看一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function printlabel(labelObj:&#123;label:string&#125;) &#123;</div><div class="line">    console.log(labelObj.label);</div><div class="line">&#125;</div><div class="line"></div><div class="line">var myObj = &#123;label:&quot;Hello lsw&quot;&#125;;</div><div class="line">printlabel(myObj);</div></pre></td></tr></table></figure><br>在这里例子中，我们调用可以输出 Hello lsw。但是，如果我们参数修改为 {label: 100}，那么编译就会失败，因为在输入参数中我们定义了参数label的类型是string类型。如果这样解释不是很明白的话，那我们看另外的写法，使用interface：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">interface labelValue &#123;</div><div class="line">    label:string</div><div class="line">&#125;</div><div class="line">function printlabel(labelObj:labelValue) &#123;</div><div class="line">    console.log(labelObj.label);</div><div class="line">&#125;</div><div class="line">var myObj = &#123;label:&quot;Hello lsw&quot;&#125;;</div><div class="line">printlabel(myObj);</div></pre></td></tr></table></figure></p>
-<p>这里我们定义了一个接口labelValue，参数只有一个label:string。</p>
-<h2 id="可选属性"><a href="#可选属性" class="headerlink" title="可选属性"></a>可选属性</h2><p>接口中的属性并不是都需要显示的，在有些情况下，我们只需要传入部分参数。使用的方式是 (age?:number)这里给出一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">interface USB &#123;</div><div class="line">    name:string;</div><div class="line">    age?:number;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function printUSB(usb:USB) &#123;</div><div class="line">    console.log(usb.name);</div><div class="line">    if (usb.age) &#123;</div><div class="line">        console.log(usb.age);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">printUSB(&#123;name:&quot;lsw&quot;&#125;);</div></pre></td></tr></table></figure></p>
-<p>这个例子中的age就是可选参数，所以通过 ? 这个声明可以将参数声明为一个可选的参数，在输入的时候我们就可以省略这个参数的输入。<br>带有可选属性的接口与普通的接口定义差不多，只是在可选属性名字定义的后面加一个?符号。<br>可选属性的好处之一是可以对可能存在的属性进行预定义，好处之二是可以捕获引用了不存在的属性时的错误。 比如，我们故意将 createSquare里的color属性名拼错，就会得到一个错误提示。</p>
-<h2 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h2><p>直接上例子</p>
-<p>interface searchFunc {<br>    (source:string, subString:string):boolean;<br>}</p>
-<p>var mySearch: searchFunc;</p>
-<p>mySearch = function(src:string, sub:string) : boolean {<br>    var flag = src.search(sub);<br>    return (flag != -1);<br>};</p>
-<p>在这里我们定义了匿名函数mySearch，它的类型就是接口函数类型searchFunc。</p>
-<h2 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h2><h2 id="。类类型"><a href="#。类类型" class="headerlink" title="。类类型"></a>。类类型</h2><h2 id="。接口继承和混合类型"><a href="#。接口继承和混合类型" class="headerlink" title="。接口继承和混合类型"></a>。接口继承和混合类型</h2>
+        <h2 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h2><p>找出数组arr中重复出现过的元素</p>
+<p>function duplicates(arr) {</p>
+<p>}<br>输入：<br>[1, 2, 4, 4, 3, 3, 1, 5, 3]<br>输出：<br>[1, 3, 4]<br><a id="more"></a><br>面试题可能会出现。</p>
+<h2 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h2><p>实现方式当然有很多种，现在讲解一种。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function duplicates(arr) &#123;</div><div class="line"> var result = [];</div><div class="line">    arr.forEach(function(elem)&#123;</div><div class="line">       if(arr.indexOf(elem) !=arr.lastIndexOf(elem) &amp;&amp; result.indexOf(elem) == -1)&#123;</div><div class="line">           result.push(elem);</div><div class="line">       &#125;</div><div class="line">    &#125;);</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">duplicates([1, 2, 4, 4, 3, 3, 1, 5, 3])</div></pre></td></tr></table></figure></p>
+<p>结果：[1,4,3]</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。<br>stringObject.indexOf(searchvalue,fromindex)<br>searchvalue：必须，要检测字符串的值<br>fromindex：可选，字符串开始检索位置</p>
+<p>lastIndexOf() : 从尾部开始检索</p>
+<p>循环变量数组没有问题，主要是 arr.indexOf(elem) !=arr.lastIndexOf(elem)  这句话。<br>假如 2 在数组中只有一个，那么无论是indexOf 还是lastIndexOf,其返回的位置都是相同的。那么就可以说明，该元素在数组中确实不重复。<br>相反，则不相同，说明有相同的元素。<br>那么  result.indexOf(elem) == -1  是什么意思呢？<br>indexOf = -1  说明这个元素在数组中不存在，检索不到。那么如果存在就不会返回-1。所以起到一个去重的效果。</p>
+<h2 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function removeDuplicatedItem(ar) &#123;</div><div class="line">    var ret = [];</div><div class="line"></div><div class="line">    for (var i = 0, j = ar.length; i &lt; j; i++) &#123;</div><div class="line">        if (ret.indexOf(ar[i]) === -1) &#123;</div><div class="line">            ret.push(ar[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return ret;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -453,8 +452,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/23/Git基本语法/" rel="next" title="Git基本语法">
-                <i class="fa fa-chevron-left"></i> Git基本语法
+              <a href="/2017/11/10/银行卡每4位数字输入空格/" rel="next" title="银行卡每4位数字输入空格">
+                <i class="fa fa-chevron-left"></i> 银行卡每4位数字输入空格
               </a>
             
           </div>
@@ -463,8 +462,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/24/typeScript函数/" rel="prev" title="typeScript函数">
-                typeScript函数 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/10/将一段数字从右到左每隔三位插入一个逗号/" rel="prev" title="将一段数字从右到左每隔三位插入一个逗号">
+                将一段数字从右到左每隔三位插入一个逗号 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -631,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初见接口"><span class="nav-number">1.</span> <span class="nav-text">初见接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可选属性"><span class="nav-number">2.</span> <span class="nav-text">可选属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数类型"><span class="nav-number">3.</span> <span class="nav-text">函数类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组类型"><span class="nav-number">4.</span> <span class="nav-text">数组类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#。类类型"><span class="nav-number">5.</span> <span class="nav-text">。类类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#。接口继承和混合类型"><span class="nav-number">6.</span> <span class="nav-text">。接口继承和混合类型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述："><span class="nav-number">1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解析："><span class="nav-number">2.</span> <span class="nav-text">解析：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路："><span class="nav-number">3.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组去重"><span class="nav-number">4.</span> <span class="nav-text">数组去重</span></a></li></ol></div>
             
 
           </div>
@@ -794,9 +793,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/10/24/typeScript接口/';
-          this.page.identifier = '2017/10/24/typeScript接口/';
-          this.page.title = 'typeScript接口';
+          this.page.url = 'http://yoursite.com/2017/11/10/js找出数组中重复的元素/';
+          this.page.identifier = '2017/11/10/js找出数组中重复的元素/';
+          this.page.title = 'js找出数组中重复的元素';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="接口是TypeScript中非常实用的东西，这里我们看一下如何使用接口（Interface），主要的内容为：。初见接口。可选属性。函数类型。数组类型。类类型。接口继承和混合类型">
+<meta name="description" content="看到一篇不错的js，转载下，使用了很多种方式实现，并且进行了性能测试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="typeScript接口">
-<meta property="og:url" content="http://yoursite.com/2017/10/24/typeScript接口/index.html">
+<meta property="og:title" content="将一段数字从右到左每隔三位插入一个逗号">
+<meta property="og:url" content="http://yoursite.com/2017/11/10/将一段数字从右到左每隔三位插入一个逗号/index.html">
 <meta property="og:site_name" content="Micity&#39;s Notes">
-<meta property="og:description" content="接口是TypeScript中非常实用的东西，这里我们看一下如何使用接口（Interface），主要的内容为：。初见接口。可选属性。函数类型。数组类型。类类型。接口继承和混合类型">
-<meta property="og:updated_time" content="2017-10-24T09:08:56.086Z">
+<meta property="og:description" content="看到一篇不错的js，转载下，使用了很多种方式实现，并且进行了性能测试">
+<meta property="og:image" content="http://yoursite.com/images/2017-11-10-3.png">
+<meta property="og:updated_time" content="2017-11-10T08:52:14.026Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="typeScript接口">
-<meta name="twitter:description" content="接口是TypeScript中非常实用的东西，这里我们看一下如何使用接口（Interface），主要的内容为：。初见接口。可选属性。函数类型。数组类型。类类型。接口继承和混合类型">
+<meta name="twitter:title" content="将一段数字从右到左每隔三位插入一个逗号">
+<meta name="twitter:description" content="看到一篇不错的js，转载下，使用了很多种方式实现，并且进行了性能测试">
+<meta name="twitter:image" content="http://yoursite.com/images/2017-11-10-3.png">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/24/typeScript接口/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/10/将一段数字从右到左每隔三位插入一个逗号/"/>
 
 
 
 
 
-  <title>typeScript接口 | Micity's Notes</title>
+  <title>将一段数字从右到左每隔三位插入一个逗号 | Micity's Notes</title>
   
 
 
@@ -289,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/24/typeScript接口/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/10/将一段数字从右到左每隔三位插入一个逗号/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micity">
@@ -306,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">typeScript接口</h1>
+          <h1 class="post-title" itemprop="name headline">将一段数字从右到左每隔三位插入一个逗号</h1>
         
 
         <div class="post-meta">
@@ -318,8 +320,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T08:57:49+08:00">
-                2017-10-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-10T16:48:20+08:00">
+                2017-11-10
               </time>
             
 
@@ -337,9 +339,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/24/typeScript接口/#comments" itemprop="discussionUrl">
+                <a href="/2017/11/10/将一段数字从右到左每隔三位插入一个逗号/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/24/typeScript接口/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/11/10/将一段数字从右到左每隔三位插入一个逗号/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -347,7 +349,7 @@
 
           
           
-             <span id="/2017/10/24/typeScript接口/" class="leancloud_visitors" data-flag-title="typeScript接口">
+             <span id="/2017/11/10/将一段数字从右到左每隔三位插入一个逗号/" class="leancloud_visitors" data-flag-title="将一段数字从右到左每隔三位插入一个逗号">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -378,17 +380,11 @@
       
 
       
-        <p>接口是TypeScript中非常实用的东西，这里我们看一下如何使用接口（Interface），主要的内容为：<br>。初见接口<br>。可选属性<br>。函数类型<br>。数组类型<br>。类类型<br>。接口继承和混合类型<br><a id="more"></a></p>
-<h2 id="初见接口"><a href="#初见接口" class="headerlink" title="初见接口"></a>初见接口</h2><p>我们看一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function printlabel(labelObj:&#123;label:string&#125;) &#123;</div><div class="line">    console.log(labelObj.label);</div><div class="line">&#125;</div><div class="line"></div><div class="line">var myObj = &#123;label:&quot;Hello lsw&quot;&#125;;</div><div class="line">printlabel(myObj);</div></pre></td></tr></table></figure><br>在这里例子中，我们调用可以输出 Hello lsw。但是，如果我们参数修改为 {label: 100}，那么编译就会失败，因为在输入参数中我们定义了参数label的类型是string类型。如果这样解释不是很明白的话，那我们看另外的写法，使用interface：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">interface labelValue &#123;</div><div class="line">    label:string</div><div class="line">&#125;</div><div class="line">function printlabel(labelObj:labelValue) &#123;</div><div class="line">    console.log(labelObj.label);</div><div class="line">&#125;</div><div class="line">var myObj = &#123;label:&quot;Hello lsw&quot;&#125;;</div><div class="line">printlabel(myObj);</div></pre></td></tr></table></figure></p>
-<p>这里我们定义了一个接口labelValue，参数只有一个label:string。</p>
-<h2 id="可选属性"><a href="#可选属性" class="headerlink" title="可选属性"></a>可选属性</h2><p>接口中的属性并不是都需要显示的，在有些情况下，我们只需要传入部分参数。使用的方式是 (age?:number)这里给出一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">interface USB &#123;</div><div class="line">    name:string;</div><div class="line">    age?:number;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function printUSB(usb:USB) &#123;</div><div class="line">    console.log(usb.name);</div><div class="line">    if (usb.age) &#123;</div><div class="line">        console.log(usb.age);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">printUSB(&#123;name:&quot;lsw&quot;&#125;);</div></pre></td></tr></table></figure></p>
-<p>这个例子中的age就是可选参数，所以通过 ? 这个声明可以将参数声明为一个可选的参数，在输入的时候我们就可以省略这个参数的输入。<br>带有可选属性的接口与普通的接口定义差不多，只是在可选属性名字定义的后面加一个?符号。<br>可选属性的好处之一是可以对可能存在的属性进行预定义，好处之二是可以捕获引用了不存在的属性时的错误。 比如，我们故意将 createSquare里的color属性名拼错，就会得到一个错误提示。</p>
-<h2 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h2><p>直接上例子</p>
-<p>interface searchFunc {<br>    (source:string, subString:string):boolean;<br>}</p>
-<p>var mySearch: searchFunc;</p>
-<p>mySearch = function(src:string, sub:string) : boolean {<br>    var flag = src.search(sub);<br>    return (flag != -1);<br>};</p>
-<p>在这里我们定义了匿名函数mySearch，它的类型就是接口函数类型searchFunc。</p>
-<h2 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h2><h2 id="。类类型"><a href="#。类类型" class="headerlink" title="。类类型"></a>。类类型</h2><h2 id="。接口继承和混合类型"><a href="#。接口继承和混合类型" class="headerlink" title="。接口继承和混合类型"></a>。接口继承和混合类型</h2>
+        <p>看到一篇不错的js，转载下，使用了很多种方式实现，并且进行了性能测试<br><a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	window.onload = function()&#123;</div><div class="line">    var testFun = function( callback, str )&#123;</div><div class="line">        var tipElem = document.createElement( &apos;div&apos; ),</div><div class="line">        startTime,</div><div class="line">        duration = 0;</div><div class="line">        for( var j = 5; j &gt; 0; j-- )&#123;</div><div class="line">            startTime = +new Date();</div><div class="line">            for( var i = 10000; i &gt; 0; i-- )&#123;</div><div class="line">                callback();</div><div class="line">            &#125;</div><div class="line">            duration = ((+new Date()) - startTime) + duration;</div><div class="line">        &#125;</div><div class="line">        duration = (duration / 5).toFixed(0);</div><div class="line">        tipElem.innerHTML = str + &apos;总耗时：&apos; + duration + &apos; ms&apos;;</div><div class="line">        document.body.appendChild( tipElem );</div><div class="line">    &#125;;</div><div class="line"> </div><div class="line">    var str = &apos;3345687687876789123&apos;;</div><div class="line"> </div><div class="line">    var cuter1 = function( str )&#123;</div><div class="line">        var len = str.length,</div><div class="line">        lastIndex,</div><div class="line">        arr = [];</div><div class="line">        while( len &gt; 0 )&#123;</div><div class="line">            lastIndex = len;</div><div class="line">            len -= 3;</div><div class="line">            arr.unshift( str.substring(len, lastIndex) );</div><div class="line">        &#125;</div><div class="line">        return arr.join(&apos;,&apos;);</div><div class="line">    &#125;;</div><div class="line"> </div><div class="line"> </div><div class="line">    var cuter2 = function( str )&#123;</div><div class="line">        return str.replace( /\B(?=(?:\d&#123;3&#125;)+$)/g, &apos;,&apos; );</div><div class="line">    &#125;;</div><div class="line"> </div><div class="line">    var cuter3 = function( str )&#123;</div><div class="line">        return str.replace(/(.*)(\d&#123;3&#125;)$/,function()&#123;</div><div class="line">            if(arguments[1]&amp;&amp; arguments[2])&#123;</div><div class="line">                return arguments[1].replace(/(.*)(\d&#123;3&#125;)$/,arguments.callee)+&quot;,&quot;+arguments[2];</div><div class="line">            &#125; else &#123;</div><div class="line">                return arguments[0];</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;;</div><div class="line"> </div><div class="line">    var cuter4 = function( str )&#123;</div><div class="line">        return str.split(&apos;&apos;).reverse().join(&apos;&apos;).replace(/(\d&#123;3&#125;)/g, &apos;$1,&apos;).split(&apos;&apos;).reverse().join(&apos;&apos;);</div><div class="line">    &#125;;</div><div class="line"> </div><div class="line">    var cuter5 = function( str )&#123;</div><div class="line">        var ret = [];</div><div class="line">        while(str)&#123;</div><div class="line">            str = str.replace(/\d&#123;1,3&#125;$/g,function(a)&#123;</div><div class="line">                ret.unshift(a)</div><div class="line">                return &quot;&quot;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">        return ret.join(&quot;,&quot;);</div><div class="line">    &#125;;</div><div class="line">    var cuter6 = function( str )&#123;</div><div class="line">        var n = str.length % 3;</div><div class="line">        if(n)&#123;</div><div class="line">            return str.slice(0,n) +  str.slice(n).replace(/(\d&#123;3&#125;)/g,&apos;,$1&apos;)</div><div class="line">        &#125;else&#123;</div><div class="line">            return str.replace(/(\d&#123;3&#125;)/g,&apos;,$1&apos;).slice(1)</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    var cuter7 = function(str)&#123;</div><div class="line">                var ret = &quot;&quot;</div><div class="line">                for(var i = 0, n = str.length, m = n %3 - 1; i &lt; n; i++)&#123;</div><div class="line">                    ret += str.charAt(i)</div><div class="line">                    if( i % 3 === m )&#123;</div><div class="line">                        ret += &quot;,&quot;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                var e = ret.length - 1</div><div class="line">                return ret.charAt(e) == &quot;,&quot; ? ret.slice(0,e) : ret</div><div class="line">   &#125;</div><div class="line">    var cuter8 = function(str)&#123;</div><div class="line">        var s2 = [].slice.call(str);</div><div class="line">        for(var i=s2.length-3; i&gt;0;i-=3)&#123;</div><div class="line">            s2.splice(i, 0 ,&apos;,&apos; );</div><div class="line">        &#125;</div><div class="line">        return s2.join(&quot;&quot;)</div><div class="line">    &#125;</div><div class="line">    var cuter9 = function(str)&#123;</div><div class="line">        var newStr= new Array(str.length+ parseInt(str.length/3));</div><div class="line">        newStr[newStr.length-1]=str[str.length-1];</div><div class="line">        var currentIndex=str.length-1;</div><div class="line">        for(var i = newStr.length-1;i &gt;= 0;i--) &#123;</div><div class="line">            if((newStr.length-i)%4==0)</div><div class="line">            &#123;</div><div class="line">                newStr[i]=&quot;,&quot;;</div><div class="line">            &#125;else&#123;</div><div class="line">                newStr[i]=str[currentIndex--];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return newStr.join(&quot;&quot;)</div><div class="line">    &#125;</div><div class="line">    var cuter10 = function(str)&#123;</div><div class="line">        var  len = str.length, str2 = &apos;&apos;, max = Math.floor(len / 3);</div><div class="line">        for(var i = 0 ; i &lt; max ; i++)&#123;</div><div class="line">            var s = str.slice(len - 3, len);</div><div class="line">            str = str.substr(0, len - 3);</div><div class="line">            str2 = (&apos;,&apos; + s) + str2;</div><div class="line">            len = str.length;</div><div class="line">        &#125;</div><div class="line">        str += str2;</div><div class="line">        return str</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var cuter11 = function(str)&#123;</div><div class="line">	   var arr=str.split(&apos;&apos;).reverse(),str2=&apos;&apos;,len=arr.length;</div><div class="line">	   for(var i=0;i&lt;len;i++)&#123;</div><div class="line">	       str2=(i+1)%3==0&amp;&amp;i!=len-1?&apos;,&apos;+arr[i]+str2:arr[i]+str2;</div><div class="line">	   &#125;</div><div class="line">	   return str2;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	var cuter12 = function(str)&#123;</div><div class="line">		for(var i=0;i&lt;str.length;i++)&#123;</div><div class="line"></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">    //下面是性能测试</div><div class="line">    testFun(function()&#123;</div><div class="line">        cuter1(str);</div><div class="line">    &#125;, &apos;方法一&apos; );</div><div class="line"> </div><div class="line">    testFun(function()&#123;</div><div class="line">        cuter2(str);</div><div class="line">    &#125;, &apos;方法二&apos; );</div><div class="line"> </div><div class="line">    testFun(function()&#123;</div><div class="line">        cuter3(str);</div><div class="line">    &#125;, &apos;方法三&apos; );</div><div class="line"> </div><div class="line">    testFun(function()&#123;</div><div class="line">        cuter4(str);</div><div class="line">    &#125;, &apos;方法四&apos; );</div><div class="line"> </div><div class="line">    testFun(function()&#123;</div><div class="line">        cuter5(str);</div><div class="line">    &#125;, &apos;方法五&apos; );</div><div class="line">    testFun(function()&#123;</div><div class="line">        cuter6(str);</div><div class="line">    &#125;, &apos;方法六&apos; );</div><div class="line">    testFun(function()&#123;</div><div class="line">        cuter7(str);</div><div class="line">    &#125;, &apos;方法七&apos; );</div><div class="line">    testFun(function()&#123;</div><div class="line"></div><div class="line">        cuter8(str);</div><div class="line">    &#125;, &apos;方法八&apos; );</div><div class="line">    testFun(function()&#123;</div><div class="line">        cuter9(str);</div><div class="line">    &#125;, &apos;方法九&apos; );</div><div class="line">    testFun(function()&#123;</div><div class="line">        cuter10(str);</div><div class="line">    &#125;, &apos;方法十&apos; );</div><div class="line"></div><div class="line">    testFun(function()&#123;</div><div class="line">        cuter11(str);</div><div class="line">    &#125;, &apos;方法十一&apos; );</div><div class="line"></div><div class="line">    console.log(&quot;方法1：&quot; + cuter1(str))</div><div class="line">    console.log(&quot;方法2：&quot; + cuter2(str))</div><div class="line">    console.log(&quot;方法3：&quot; + cuter3(str))</div><div class="line">    console.log(&quot;方法4：&quot; + cuter4(str))</div><div class="line">    console.log(&quot;方法5：&quot; + cuter5(str))</div><div class="line">    console.log(&quot;方法6：&quot; + cuter6(str))</div><div class="line">    console.log(&quot;方法7：&quot; + cuter7(str))</div><div class="line">    console.log(&quot;方法8：&quot; + cuter8(str))</div><div class="line">    console.log(&quot;方法9：&quot; + cuter9(str))</div><div class="line">    console.log(&quot;方法10：&quot; + cuter10(str))</div><div class="line">    console.log(&quot;方法11：&quot; + cuter11(str))</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>测试结果：</p>
+<p><img src="/images/2017-11-10-3.png" alt=""></p>
+
       
     </div>
     
@@ -453,8 +449,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/23/Git基本语法/" rel="next" title="Git基本语法">
-                <i class="fa fa-chevron-left"></i> Git基本语法
+              <a href="/2017/11/10/js找出数组中重复的元素/" rel="next" title="js找出数组中重复的元素">
+                <i class="fa fa-chevron-left"></i> js找出数组中重复的元素
               </a>
             
           </div>
@@ -462,10 +458,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/24/typeScript函数/" rel="prev" title="typeScript函数">
-                typeScript函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -527,17 +519,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -621,22 +604,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初见接口"><span class="nav-number">1.</span> <span class="nav-text">初见接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可选属性"><span class="nav-number">2.</span> <span class="nav-text">可选属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数类型"><span class="nav-number">3.</span> <span class="nav-text">函数类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组类型"><span class="nav-number">4.</span> <span class="nav-text">数组类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#。类类型"><span class="nav-number">5.</span> <span class="nav-text">。类类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#。接口继承和混合类型"><span class="nav-number">6.</span> <span class="nav-text">。接口继承和混合类型</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -794,9 +761,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/10/24/typeScript接口/';
-          this.page.identifier = '2017/10/24/typeScript接口/';
-          this.page.title = 'typeScript接口';
+          this.page.url = 'http://yoursite.com/2017/11/10/将一段数字从右到左每隔三位插入一个逗号/';
+          this.page.identifier = '2017/11/10/将一段数字从右到左每隔三位插入一个逗号/';
+          this.page.title = '将一段数字从右到左每隔三位插入一个逗号';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
