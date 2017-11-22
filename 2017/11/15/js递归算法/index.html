@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="递归是一种解决问题的方法，它解决问题的各个小部分，直到解决最初的大问题。通常涉及函数调用自身。    递归算法的特点：    1、在函数过程中调用自身    2、在递归过程中，必须有一个明确的条件判断递归的结束，即递归出口    3、递归算法简洁但效率低，通常不作为推荐算法 实例：1、阶乘：问题描述： n! = n(n-1)…2*1 123456var factorial = function(n">
+<meta name="description" content="递归是一种解决问题的方法，它解决问题的各个小部分，直到解决最初的大问题。通常涉及函数调用自身。    递归算法的特点：    1、在函数过程中调用自身    2、在递归过程中，必须有一个明确的条件判断递归的结束，即递归出口    3、递归算法简洁但效率低，通常不作为推荐算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js递归算法">
 <meta property="og:url" content="http://yoursite.com/2017/11/15/js递归算法/index.html">
 <meta property="og:site_name" content="Micity&#39;s Notes">
-<meta property="og:description" content="递归是一种解决问题的方法，它解决问题的各个小部分，直到解决最初的大问题。通常涉及函数调用自身。    递归算法的特点：    1、在函数过程中调用自身    2、在递归过程中，必须有一个明确的条件判断递归的结束，即递归出口    3、递归算法简洁但效率低，通常不作为推荐算法 实例：1、阶乘：问题描述： n! = n(n-1)…2*1 123456var factorial = function(n">
+<meta property="og:description" content="递归是一种解决问题的方法，它解决问题的各个小部分，直到解决最初的大问题。通常涉及函数调用自身。    递归算法的特点：    1、在函数过程中调用自身    2、在递归过程中，必须有一个明确的条件判断递归的结束，即递归出口    3、递归算法简洁但效率低，通常不作为推荐算法">
 <meta property="og:image" content="http://yoursite.com/2017/11/15/js递归算法/images/2017-11-15-1.png">
-<meta property="og:updated_time" content="2017-11-15T02:47:09.484Z">
+<meta property="og:updated_time" content="2017-11-15T03:15:12.955Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js递归算法">
-<meta name="twitter:description" content="递归是一种解决问题的方法，它解决问题的各个小部分，直到解决最初的大问题。通常涉及函数调用自身。    递归算法的特点：    1、在函数过程中调用自身    2、在递归过程中，必须有一个明确的条件判断递归的结束，即递归出口    3、递归算法简洁但效率低，通常不作为推荐算法 实例：1、阶乘：问题描述： n! = n(n-1)…2*1 123456var factorial = function(n">
+<meta name="twitter:description" content="递归是一种解决问题的方法，它解决问题的各个小部分，直到解决最初的大问题。通常涉及函数调用自身。    递归算法的特点：    1、在函数过程中调用自身    2、在递归过程中，必须有一个明确的条件判断递归的结束，即递归出口    3、递归算法简洁但效率低，通常不作为推荐算法">
 <meta name="twitter:image" content="http://yoursite.com/2017/11/15/js递归算法/images/2017-11-15-1.png">
 
 
@@ -380,7 +380,7 @@
       
 
       
-        <p>递归是一种解决问题的方法，它解决问题的各个小部分，直到解决最初的大问题。通常涉及函数调用自身。<br>    递归算法的特点：<br>    1、在函数过程中调用自身<br>    2、在递归过程中，必须有一个明确的条件判断递归的结束，即递归出口<br>    3、递归算法简洁但效率低，通常不作为推荐算法</p>
+        <p>递归是一种解决问题的方法，它解决问题的各个小部分，直到解决最初的大问题。通常涉及函数调用自身。<br>    递归算法的特点：<br>    1、在函数过程中调用自身<br>    2、在递归过程中，必须有一个明确的条件判断递归的结束，即递归出口<br>    3、递归算法简洁但效率低，通常不作为推荐算法<br><a id="more"></a></p>
 <p>实例：<br>1、阶乘：<br>问题描述： n! = n<em>(n-1)</em>…2*1</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var factorial = function(n)&#123;</div><div class="line">    if(n&lt;=1) return 1;</div><div class="line">    return n*arguments.callee(n-1);</div><div class="line">&#125;</div><div class="line">factorial(5)  //120</div><div class="line"></div></pre></td></tr></table></figure>
 <p>arguments.callee，是为了防止函数名的紧密耦合</p>
@@ -461,8 +461,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/15/js高级算法-动态规划/" rel="prev" title="js高级算法-动态规划">
-                js高级算法-动态规划 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/16/js中Object-getOwnPropertyDescriptor函数/" rel="prev" title="js中Object.getOwnPropertyDescriptor函数">
+                js中Object.getOwnPropertyDescriptor函数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -545,7 +545,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

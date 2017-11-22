@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="难点不是插入空格，而是修正光标的位置，这个只支持IE9＋1234567891011121314151617181920212223242526272829303132333435363738394041&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head lang=&amp;quot;en&amp;quot;&amp;gt;    &amp;lt;meta charset=&amp;quot;UTF-8&amp;q">
+<meta name="description" content="难点不是插入空格，而是修正光标的位置，这个只支持IE9＋">
 <meta property="og:type" content="article">
 <meta property="og:title" content="银行卡每4位数字输入空格">
 <meta property="og:url" content="http://yoursite.com/2017/11/10/银行卡每4位数字输入空格/index.html">
 <meta property="og:site_name" content="Micity&#39;s Notes">
-<meta property="og:description" content="难点不是插入空格，而是修正光标的位置，这个只支持IE9＋1234567891011121314151617181920212223242526272829303132333435363738394041&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head lang=&amp;quot;en&amp;quot;&amp;gt;    &amp;lt;meta charset=&amp;quot;UTF-8&amp;q">
-<meta property="og:updated_time" content="2017-11-10T05:59:17.477Z">
+<meta property="og:description" content="难点不是插入空格，而是修正光标的位置，这个只支持IE9＋">
+<meta property="og:updated_time" content="2017-11-15T03:15:48.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="银行卡每4位数字输入空格">
-<meta name="twitter:description" content="难点不是插入空格，而是修正光标的位置，这个只支持IE9＋1234567891011121314151617181920212223242526272829303132333435363738394041&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head lang=&amp;quot;en&amp;quot;&amp;gt;    &amp;lt;meta charset=&amp;quot;UTF-8&amp;q">
+<meta name="twitter:description" content="难点不是插入空格，而是修正光标的位置，这个只支持IE9＋">
 
 
 
@@ -378,7 +378,8 @@
       
 
       
-        <h2 id="难点不是插入空格，而是修正光标的位置，这个只支持IE9＋"><a href="#难点不是插入空格，而是修正光标的位置，这个只支持IE9＋" class="headerlink" title="难点不是插入空格，而是修正光标的位置，这个只支持IE9＋"></a>难点不是插入空格，而是修正光标的位置，这个只支持IE9＋</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line"></div><div class="line">&lt;head lang=&quot;en&quot;&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;银行卡号4位空格&lt;/title&gt;</div><div class="line">    &lt;script src=&quot;http://cdn.bootcss.com/jquery/2.1.4/jquery.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">    &lt;input type=&quot;text&quot; id=&quot;kahao&quot; /&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        $(function() &#123;</div><div class="line"></div><div class="line">            $(&apos;#kahao&apos;).on(&apos;keyup&apos;, function(e) &#123;</div><div class="line">            	console.log(e)</div><div class="line">             //只对输入数字时进行处理</div><div class="line">               if((e.which &gt;= 48 &amp;&amp; e.which &lt;= 57) ||</div><div class="line">                       (e.which &gt;= 96 &amp;&amp; e.which &lt;= 105 ))&#123;</div><div class="line">                    //获取当前光标的位置</div><div class="line">                    var caret = this.selectionStart</div><div class="line">                    //获取当前的value</div><div class="line">                    var value = this.value</div><div class="line">                    //从左边沿到坐标之间的空格数</div><div class="line">                    var sp =  (value.slice(0, caret).match(/\s/g) || []).length</div><div class="line">                    //去掉所有空格</div><div class="line">                   var nospace = value.replace(/\s/g, &apos;&apos;)</div><div class="line">                   //重新插入空格</div><div class="line">                   var curVal = this.value = nospace.replace(/(\d&#123;4&#125;)/g, &quot;$1 &quot;).trim()</div><div class="line">                   //从左边沿到原坐标之间的空格数</div><div class="line">                   var curSp = (curVal.slice(0, caret).match(/\s/g) || []).length</div><div class="line">                  //修正光标位置</div><div class="line">                 this.selectionEnd = this.selectionStart = caret + curSp - sp</div><div class="line">               </div><div class="line">                &#125;</div><div class="line">            &#125;)</div><div class="line">        &#125;)</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+        <p>难点不是插入空格，而是修正光标的位置，这个只支持IE9＋<br><a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line"></div><div class="line">&lt;head lang=&quot;en&quot;&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;银行卡号4位空格&lt;/title&gt;</div><div class="line">    &lt;script src=&quot;http://cdn.bootcss.com/jquery/2.1.4/jquery.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">    &lt;input type=&quot;text&quot; id=&quot;kahao&quot; /&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        $(function() &#123;</div><div class="line"></div><div class="line">            $(&apos;#kahao&apos;).on(&apos;keyup&apos;, function(e) &#123;</div><div class="line">            	console.log(e)</div><div class="line">             //只对输入数字时进行处理</div><div class="line">               if((e.which &gt;= 48 &amp;&amp; e.which &lt;= 57) ||</div><div class="line">                       (e.which &gt;= 96 &amp;&amp; e.which &lt;= 105 ))&#123;</div><div class="line">                    //获取当前光标的位置</div><div class="line">                    var caret = this.selectionStart</div><div class="line">                    //获取当前的value</div><div class="line">                    var value = this.value</div><div class="line">                    //从左边沿到坐标之间的空格数</div><div class="line">                    var sp =  (value.slice(0, caret).match(/\s/g) || []).length</div><div class="line">                    //去掉所有空格</div><div class="line">                   var nospace = value.replace(/\s/g, &apos;&apos;)</div><div class="line">                   //重新插入空格</div><div class="line">                   var curVal = this.value = nospace.replace(/(\d&#123;4&#125;)/g, &quot;$1 &quot;).trim()</div><div class="line">                   //从左边沿到原坐标之间的空格数</div><div class="line">                   var curSp = (curVal.slice(0, caret).match(/\s/g) || []).length</div><div class="line">                  //修正光标位置</div><div class="line">                 this.selectionEnd = this.selectionStart = caret + curSp - sp</div><div class="line">               </div><div class="line">                &#125;</div><div class="line">            &#125;)</div><div class="line">        &#125;)</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -517,17 +518,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -546,7 +538,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -611,22 +603,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#难点不是插入空格，而是修正光标的位置，这个只支持IE9＋"><span class="nav-number">1.</span> <span class="nav-text">难点不是插入空格，而是修正光标的位置，这个只支持IE9＋</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
