@@ -89,7 +89,7 @@
 <meta property="og:image" content="http://yoursite.com/images/2017-11-22-2.png">
 <meta property="og:image" content="http://yoursite.com/images/2017-11-22-3.png">
 <meta property="og:image" content="http://yoursite.com/images/2017-11-22-3.png">
-<meta property="og:updated_time" content="2017-11-22T02:02:19.058Z">
+<meta property="og:updated_time" content="2017-11-24T09:09:49.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="table固定宽度且内容自动换行">
 <meta name="twitter:description" content="table很常用，用时候td里的内容比较多，占用的列宽比较长，整体看起来很不美观。这时候我们可能会需要固定table的列宽。如果直接在th或td上加宽度可能不起效果。这是因为我们并没有改变表格的布局算法。CSS table-layout 属性可以帮你实现">
@@ -400,7 +400,9 @@
 <p>word-wrap取值：<br>normal：只在允许的断字点换行（浏览器保持默认处理）。<br>break-word：在长单词或 URL 地址内部进行换行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">默认：</div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;style&gt; </div><div class="line">        p.test&#123;</div><div class="line">            width:11em; </div><div class="line">            border:1px solid #000000;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;p class=&quot;test&quot;&gt;This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div><div class="line">换行：</div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;style&gt; </div><div class="line">        p.test&#123;</div><div class="line">            width:11em; </div><div class="line">            border:1px solid #000000;</div><div class="line">            word-wrap:break-word;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;p class=&quot;test&quot;&gt;This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
 <p><img src="/images/2017-11-22-2.png" alt=""><br><img src="/images/2017-11-22-3.png" alt=""></p>
 <p>这样，为了防止长单词溢出，就在它的内部断句了。这就是 word-wrap:break-word 的功能。<br>好吧，你现在可以说了，都有了word-wrap这个东西，那还要 word-break 来干什么鸟？</p>
-<p>看上图，好像每一行后面还有好多空隙啊，所以IE真的很体贴，不要再骂它啦，考虑到不浪费一点点空间的问题，它创造出了 word-break 这个东西。现在我们来看看使用 word-break:break-all; 后会怎么样。<br><img src="/images/2017-11-22-3.png" alt=""></p>
+<p>看上图，好像每一行后面还有好多空隙啊，所以IE真的很体贴，不要再骂它啦，考虑到不浪费一点点空间的问题，它创造出了 word-break 这个东西。现在我们来看看使用 word-break:break-all; 后会怎么样。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;style&gt; </div><div class="line">        p.test&#123;</div><div class="line">            width:11em; </div><div class="line">            border:1px solid #000000;</div><div class="line">            word-wrap:break-word;</div><div class="line">            word-break:break-all;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;p class=&quot;test&quot;&gt;This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
+<p><img src="/images/2017-11-22-3.png" alt=""></p>
+<p>把 word-wrap:break-word; word-break:break-all;  放在td上同样可以使文字换行。</p>
 
       
     </div>
@@ -475,6 +477,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/24/git更换远程链接地址注意事项/" rel="prev" title="git更换远程链接地址注意事项">
+                git更换远程链接地址注意事项 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -565,7 +571,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
