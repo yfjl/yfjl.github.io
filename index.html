@@ -289,6 +289,293 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/28/js验证身份证号的有效性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micity">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507626458664&di=b436858cce2f58eafc289d8d248416cc&imgtype=0&src=http%3A%2F%2Fwww.qqzhi.com%2Fuploadpic%2F2014-09-16%2F053119768.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Micity's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/28/js验证身份证号的有效性/" itemprop="url">js验证身份证号的有效性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T13:26:09+08:00">
+                2017-11-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/28/js验证身份证号的有效性/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/11/28/js验证身份证号的有效性/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/11/28/js验证身份证号的有效性/" class="leancloud_visitors" data-flag-title="js验证身份证号的有效性">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="工作中，可能会遇到验证身份证号的有效性，下面记录下相关代码，以备不时之需。"><a href="#工作中，可能会遇到验证身份证号的有效性，下面记录下相关代码，以备不时之需。" class="headerlink" title="工作中，可能会遇到验证身份证号的有效性，下面记录下相关代码，以备不时之需。"></a>工作中，可能会遇到验证身份证号的有效性，下面记录下相关代码，以备不时之需。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">	/*</div><div class="line">根据〖中华人民共和国国家标准 GB 11643-1999〗中有关公民身份号码的规定，公民身份号码是特征组合码，由十七位数字本体码和一位数字校验码组成。排列顺序从左至右依次为：六位数字地址码，八位数字出生日期码，三位数字顺序码和一位数字校验码。</div><div class="line">    地址码表示编码对象常住户口所在县(市、旗、区)的行政区划代码。</div><div class="line">    出生日期码表示编码对象出生的年、月、日，其中年份用四位数字表示，年、月、日之间不用分隔符。</div><div class="line">    顺序码表示同一地址码所标识的区域范围内，对同年、月、日出生的人员编定的顺序号。顺序码的奇数分给男性，偶数分给女性。</div><div class="line">    校验码是根据前面十七位数字码，按照ISO 7064:1983.MOD 11-2校验码计算出来的检验码。</div><div class="line"></div><div class="line">出生日期计算方法。</div><div class="line">    15位的身份证编码首先把出生年扩展为4位，简单的就是增加一个19或18,这样就包含了所有1800-1999年出生的人;</div><div class="line">    2000年后出生的肯定都是18位的了没有这个烦恼，至于1800年前出生的,那啥那时应该还没身份证号这个东东，⊙﹏⊙b汗...</div><div class="line">下面是正则表达式:</div><div class="line"> 出生日期1800-2099  (18|19|20)?\d&#123;2&#125;(0[1-9]|1[12])(0[1-9]|[12]\d|3[01])</div><div class="line"> 身份证正则表达式 /^\d&#123;6&#125;(18|19|20)?\d&#123;2&#125;(0[1-9]|1[12])(0[1-9]|[12]\d|3[01])\d&#123;3&#125;(\d|X)$/i            </div><div class="line"> 15位校验规则 6位地址编码+6位出生日期+3位顺序号</div><div class="line"> 18位校验规则 6位地址编码+8位出生日期+3位顺序号+1位校验位</div><div class="line"> </div><div class="line"> 校验位规则     公式:∑(ai×Wi)(mod 11)……………………………………(1)</div><div class="line">                公式(1)中： </div><div class="line">                i----表示号码字符从由至左包括校验码在内的位置序号； </div><div class="line">                ai----表示第i位置上的号码字符值； </div><div class="line">                Wi----示第i位置上的加权因子，其数值依据公式Wi=2^(n-1）(mod 11)计算得出。</div><div class="line">                i 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1</div><div class="line">                Wi 7 9 10 5 8 4 2 1 6 3 7 9 10 5 8 4 2 1</div><div class="line"></div><div class="line">*/</div><div class="line">//身份证号合法性验证 </div><div class="line">//支持15位和18位身份证号</div><div class="line">//支持地址编码、出生日期、校验位验证</div><div class="line"></div><div class="line">function IdentityCodeValid(code) &#123; </div><div class="line">    function cap (str)&#123;    //如果身份证验证中有x,则变为X再做判断；</div><div class="line">        var temp = str.split(&quot;&quot;);</div><div class="line">        temp.forEach(function(i,index)&#123;if(i===&apos;x&apos;)&#123;temp[index]=&quot;X&quot;&#125;&#125;);return temp.join(&quot;&quot;);</div><div class="line">    &#125;</div><div class="line">    var code = cap(code);</div><div class="line">    var copycode = code ;</div><div class="line">    var city=&#123;11:&quot;北京&quot;,12:&quot;天津&quot;,13:&quot;河北&quot;,14:&quot;山西&quot;,15:&quot;内蒙古&quot;,21:&quot;辽宁&quot;,22:&quot;吉林&quot;,23:&quot;黑龙江 &quot;,31:&quot;上海&quot;,32:&quot;江苏&quot;,33:&quot;浙江&quot;,34:&quot;安徽&quot;,35:&quot;福建&quot;,36:&quot;江西&quot;,37:&quot;山东&quot;,41:&quot;河南&quot;,42:&quot;湖北 &quot;,43:&quot;湖南&quot;,44:&quot;广东&quot;,45:&quot;广西&quot;,46:&quot;海南&quot;,50:&quot;重庆&quot;,51:&quot;四川&quot;,52:&quot;贵州&quot;,53:&quot;云南&quot;,54:&quot;西藏 &quot;,61:&quot;陕西&quot;,62:&quot;甘肃&quot;,63:&quot;青海&quot;,64:&quot;宁夏&quot;,65:&quot;新疆&quot;,71:&quot;台湾&quot;,81:&quot;香港&quot;,82:&quot;澳门&quot;,91:&quot;国外 &quot;&#125;;</div><div class="line">    var tip = &quot;&quot;;</div><div class="line">    var pass= true;</div><div class="line">    </div><div class="line">    if(!code || !/^\d&#123;6&#125;(18|19|20)?\d&#123;2&#125;(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d&#123;3&#125;(\d|X)$/i.test(code))&#123;</div><div class="line">        tip = &quot;身份证号格式错误&quot;;</div><div class="line">        pass = false;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    else if(!city[code.substr(0,2)])&#123;</div><div class="line">        tip = &quot;地址编码错误&quot;;</div><div class="line">        pass = false;</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        //18位身份证需要验证最后一位校验位</div><div class="line">        if(code.length == 18)&#123;</div><div class="line">            code = code.split(&apos;&apos;);</div><div class="line">            //∑(ai×Wi)(mod 11)</div><div class="line">            //加权因子</div><div class="line">            var factor = [ 7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2 ];</div><div class="line">            //校验位</div><div class="line">            var parity = [ 1, 0, &apos;X&apos;, 9, 8, 7, 6, 5, 4, 3, 2 ];</div><div class="line">            var sum = 0;</div><div class="line">            var ai = 0;</div><div class="line">            var wi = 0;</div><div class="line">            for (var i = 0; i &lt; 17; i++)</div><div class="line">            &#123;</div><div class="line">                ai = code[i];</div><div class="line">                wi = factor[i];</div><div class="line">                sum += ai * wi;</div><div class="line">            &#125;</div><div class="line">            var last = parity[sum % 11];</div><div class="line">            if(parity[sum % 11] != code[17])&#123;</div><div class="line">                tip = &quot;校验位错误&quot;;</div><div class="line">                pass =false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    //判断出生日期是否合法</div><div class="line">    function check(date)&#123;    //date 传 例如：2013-01-01、2013/01/01、2013/01/32、2013/02/29</div><div class="line">        return (new Date(date).getDate()==date.substring(date.length-2));</div><div class="line">    &#125;</div><div class="line">    function getDate(code)&#123;    //得到类似2013-01-01、2013/01/01、2013/01/32、2013/02/29的日期格式</div><div class="line">        var date = &apos;&apos; ;</div><div class="line">        if(code.length===18)&#123;</div><div class="line">             date = code.substring(6,14)</div><div class="line">        &#125;else if(code.length===15)&#123;</div><div class="line">             date = &apos;19&apos;+code.substring(6,12)</div><div class="line">        &#125;else&#123;</div><div class="line">            return &apos;&apos;;</div><div class="line">        &#125;</div><div class="line">        date = date.substr(0,4)+&apos;-&apos;+date.substr(4,2)+&apos;-&apos;+date.substr(6,2);</div><div class="line">        return date;</div><div class="line">    &#125;</div><div class="line">    if(!check(getDate(copycode)))&#123;</div><div class="line">        pass = false ;</div><div class="line">        tip = &quot;日期格式不正确&quot;</div><div class="line">    &#125;</div><div class="line">//   if(!pass) alert(tip);</div><div class="line">    return pass;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">        var c = &apos;533123196002180059&apos;;</div><div class="line">       var res= IdentityCodeValid(c);</div><div class="line"></div><div class="line"></div><div class="line">       console.log(res)</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/28/js字符串截取substring、slice、substr区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micity">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507626458664&di=b436858cce2f58eafc289d8d248416cc&imgtype=0&src=http%3A%2F%2Fwww.qqzhi.com%2Fuploadpic%2F2014-09-16%2F053119768.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Micity's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/28/js字符串截取substring、slice、substr区别/" itemprop="url">js字符串截取substring、slice、substr区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T11:23:46+08:00">
+                2017-11-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/28/js字符串截取substring、slice、substr区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/11/28/js字符串截取substring、slice、substr区别/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/11/28/js字符串截取substring、slice、substr区别/" class="leancloud_visitors" data-flag-title="js字符串截取substring、slice、substr区别">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在js中字符截取函数有常用的三个slice()、substring()、substr()了，下面来介绍一下他们的区别吧。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/28/js字符串截取substring、slice、substr区别/#post.more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/27/自定义jq日历插件calendar-js/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1449,304 +1736,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/15/js二分搜索/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micity">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507626458664&di=b436858cce2f58eafc289d8d248416cc&imgtype=0&src=http%3A%2F%2Fwww.qqzhi.com%2Fuploadpic%2F2014-09-16%2F053119768.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Micity's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/15/js二分搜索/" itemprop="url">js二分搜索</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-15T08:56:01+08:00">
-                2017-11-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/11/15/js二分搜索/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/15/js二分搜索/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/11/15/js二分搜索/" class="leancloud_visitors" data-flag-title="js二分搜索">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>二分搜索法：</p>
-<p>　　也称折半搜索，是一种在有序数组中查找特定元素的搜索算法。</p>
-<p>实现步骤：</p>
-<p>　　1. 如果选中值是待搜索值，那么算法执行完毕。</p>
-<p>　　2. 若查找值小于中间值，则在小于中间值的那一部分执行步骤1的操作。</p>
-<p>　　3. 若查找值大于中间值，则在大于中间值的那一部分执行步骤1的操作。</p>
-<p>　　4. 否则，返回结果为查不到，返回-1。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/15/js二分搜索/#post.more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/15/js顺序搜索/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micity">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507626458664&di=b436858cce2f58eafc289d8d248416cc&imgtype=0&src=http%3A%2F%2Fwww.qqzhi.com%2Fuploadpic%2F2014-09-16%2F053119768.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Micity's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/15/js顺序搜索/" itemprop="url">js顺序搜索</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-15T08:48:53+08:00">
-                2017-11-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/11/15/js顺序搜索/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/15/js顺序搜索/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/11/15/js顺序搜索/" class="leancloud_visitors" data-flag-title="js顺序搜索">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>js顺序搜索是最基本的搜索算法，它的机制是，将每一个数据结构中的元素和我们要找的元素做比较。顺序搜索是最低效的一种搜索算法。我们在工作中会经常用到，只不过不知道它的“正式”名称而已。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/15/js顺序搜索/#post.more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1801,7 +1790,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

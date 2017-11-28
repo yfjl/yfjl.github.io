@@ -79,18 +79,16 @@
 
 
 
-<meta name="description" content="介绍cheerio.js 是为服务器特别定制的，快速、灵活、实施的jQuery核心实现.可以直接在node.js 操作dom并且和jq语法几乎一样。ok，看一下中文教程吧 http://cnodejs.org/topic/5203a71844e76d216a727d2e">
+<meta name="description" content="在js中字符截取函数有常用的三个slice()、substring()、substr()了，下面来介绍一下他们的区别吧。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodejs爬虫快速入门">
-<meta property="og:url" content="http://yoursite.com/2017/11/09/nodejs爬虫快速入门/index.html">
+<meta property="og:title" content="js字符串截取substring、slice、substr区别">
+<meta property="og:url" content="http://yoursite.com/2017/11/28/js字符串截取substring、slice、substr区别/index.html">
 <meta property="og:site_name" content="Micity&#39;s Notes">
-<meta property="og:description" content="介绍cheerio.js 是为服务器特别定制的，快速、灵活、实施的jQuery核心实现.可以直接在node.js 操作dom并且和jq语法几乎一样。ok，看一下中文教程吧 http://cnodejs.org/topic/5203a71844e76d216a727d2e">
-<meta property="og:image" content="http://yoursite.com/images/2017-11-9-3.png">
-<meta property="og:updated_time" content="2017-11-09T09:20:01.234Z">
+<meta property="og:description" content="在js中字符截取函数有常用的三个slice()、substring()、substr()了，下面来介绍一下他们的区别吧。">
+<meta property="og:updated_time" content="2017-11-28T05:24:29.878Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs爬虫快速入门">
-<meta name="twitter:description" content="介绍cheerio.js 是为服务器特别定制的，快速、灵活、实施的jQuery核心实现.可以直接在node.js 操作dom并且和jq语法几乎一样。ok，看一下中文教程吧 http://cnodejs.org/topic/5203a71844e76d216a727d2e">
-<meta name="twitter:image" content="http://yoursite.com/images/2017-11-9-3.png">
+<meta name="twitter:title" content="js字符串截取substring、slice、substr区别">
+<meta name="twitter:description" content="在js中字符截取函数有常用的三个slice()、substring()、substr()了，下面来介绍一下他们的区别吧。">
 
 
 
@@ -120,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/09/nodejs爬虫快速入门/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/28/js字符串截取substring、slice、substr区别/"/>
 
 
 
 
 
-  <title>nodejs爬虫快速入门 | Micity's Notes</title>
+  <title>js字符串截取substring、slice、substr区别 | Micity's Notes</title>
   
 
 
@@ -291,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/09/nodejs爬虫快速入门/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/28/js字符串截取substring、slice、substr区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micity">
@@ -308,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">nodejs爬虫快速入门</h1>
+          <h1 class="post-title" itemprop="name headline">js字符串截取substring、slice、substr区别</h1>
         
 
         <div class="post-meta">
@@ -320,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-09T17:01:52+08:00">
-                2017-11-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T11:23:46+08:00">
+                2017-11-28
               </time>
             
 
@@ -339,9 +337,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/11/09/nodejs爬虫快速入门/#comments" itemprop="discussionUrl">
+                <a href="/2017/11/28/js字符串截取substring、slice、substr区别/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/09/nodejs爬虫快速入门/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/11/28/js字符串截取substring、slice、substr区别/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -349,7 +347,7 @@
 
           
           
-             <span id="/2017/11/09/nodejs爬虫快速入门/" class="leancloud_visitors" data-flag-title="nodejs爬虫快速入门">
+             <span id="/2017/11/28/js字符串截取substring、slice、substr区别/" class="leancloud_visitors" data-flag-title="js字符串截取substring、slice、substr区别">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -380,13 +378,12 @@
       
 
       
-        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>cheerio.js 是为服务器特别定制的，快速、灵活、实施的jQuery核心实现.<br>可以直接在node.js 操作dom并且和jq语法几乎一样。ok，看一下中文教程吧 <a href="http://cnodejs.org/topic/5203a71844e76d216a727d2e" target="_blank" rel="external">http://cnodejs.org/topic/5203a71844e76d216a727d2e</a><br><a id="more"></a></p>
-<h2 id="安装-cheerio"><a href="#安装-cheerio" class="headerlink" title="安装 cheerio"></a>安装 cheerio</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm install cheerio -S</div></pre></td></tr></table></figure>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>新建http.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var http = require(&quot;http&quot;);</div><div class="line">function download(url, callback) &#123;</div><div class="line">  http.get(url, function(res) &#123;</div><div class="line">    var data = &quot;&quot;;</div><div class="line">    res.on(&apos;data&apos;, function (chunk) &#123;</div><div class="line">      data += chunk;</div><div class="line">    &#125;);</div><div class="line">    res.on(&quot;end&quot;, function() &#123;</div><div class="line">      callback(data);</div><div class="line">    &#125;);</div><div class="line">  &#125;).on(&quot;error&quot;, function() &#123;</div><div class="line">    callback(null);</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">exports.download = download;</div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
-<p>新建index.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var cheerio = require(&quot;cheerio&quot;);</div><div class="line">var server = require(&quot;./http&quot;);</div><div class="line"> </div><div class="line">var url = &quot;http://www.zhangxinxu.com/wordpress/&quot;</div><div class="line">server.download(url, function(data) &#123;</div><div class="line">  if (data) &#123;</div><div class="line">    var $ = cheerio.load(data);</div><div class="line"></div><div class="line">    $(&quot;.entry-title&quot;).each(function(i, e) &#123;</div><div class="line">        console.log($(e).text())</div><div class="line">    &#125;);</div><div class="line"> </div><div class="line">  &#125; else &#123;</div><div class="line">      console.log(&quot;error&quot;);</div><div class="line">  &#125; </div><div class="line">&#125;);</div><div class="line"></div></pre></td></tr></table></figure></p>
-<p>运行node index.js<br>效果：</p>
-<p><img src="/images/2017-11-9-3.png" alt="">;</p>
-<h2 id="源码下载"><a href="#源码下载" class="headerlink" title="源码下载"></a>源码下载</h2><p><a href="https://github.com/yfjl/node-simple-reptile" target="_blank" rel="external">https://github.com/yfjl/node-simple-reptile</a></p>
+        <p>在js中字符截取函数有常用的三个slice()、substring()、substr()了，下面来介绍一下他们的区别吧。<br><a id="more"></a></p>
+<p>str.substring(start,end)<br>参数：<br>    start：必需，非负整数<br>    stop:可选，非负整数</p>
+<p>str.substr(start,len)<br>参数：<br>    start：必需，可以为负整数<br>    len：可选，截取的长度</p>
+<p>str.slice(start,end)<br>参数：<br>    start：必需，可以为负整数<br>    end：可选，可以为负数</p>
+<p>共同点：<br>    1、第一个参数都是必需的，第二个参数都是可选的。<br>    2、如果只有一个参数，那么substring、substr、slice相同</p>
+<p>不同点：<br>    1、substring参数为正整数，substr、slice参数可以是正也可以是负<br>    2、substring与slice参数均是开始索引与结束索引，substr第二个可选参数是长度</p>
 
       
     </div>
@@ -452,8 +449,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/09/electron快速入门/" rel="next" title="electron快速入门">
-                <i class="fa fa-chevron-left"></i> electron快速入门
+              <a href="/2017/11/27/自定义jq日历插件calendar-js/" rel="next" title="自定义jq日历插件calendar.js">
+                <i class="fa fa-chevron-left"></i> 自定义jq日历插件calendar.js
               </a>
             
           </div>
@@ -462,8 +459,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/10/js-BOM知识点整理/" rel="prev" title="js-BOM知识点整理">
-                js-BOM知识点整理 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/28/js验证身份证号的有效性/" rel="prev" title="js验证身份证号的有效性">
+                js验证身份证号的有效性 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -526,17 +523,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -620,22 +608,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-cheerio"><span class="nav-number">2.</span> <span class="nav-text">安装 cheerio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码下载"><span class="nav-number">4.</span> <span class="nav-text">源码下载</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -793,9 +765,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/11/09/nodejs爬虫快速入门/';
-          this.page.identifier = '2017/11/09/nodejs爬虫快速入门/';
-          this.page.title = 'nodejs爬虫快速入门';
+          this.page.url = 'http://yoursite.com/2017/11/28/js字符串截取substring、slice、substr区别/';
+          this.page.identifier = '2017/11/28/js字符串截取substring、slice、substr区别/';
+          this.page.title = 'js字符串截取substring、slice、substr区别';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
